@@ -1,5 +1,9 @@
 # For database connection and ORM
+<<<<<<< HEAD
 SQLAlchemy==2.0.23
+=======
+SQLAlchemy==2.0.27
+>>>>>>> 133d86d (Done 1.2)
 psycopg2-binary==2.9.9
 
 # For communicating with the arXiv API
@@ -12,4 +16,12 @@ APScheduler==3.10.4
 requests==2.31.0
 
 #FUCK
+<<<<<<< HEAD
 feedparser==6.0.10
+=======
+feedparser==6.0.10
+
+# For data analysis and CSV export (using pre-compiled wheels)
+pandas==2.2.0
+numpy==1.26.4
+>>>>>>> 133d86d (Done 1.2)

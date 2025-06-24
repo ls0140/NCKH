@@ -1,0 +1,19 @@
+A.Các Layer cơ bản
+1/Normalization Layer là gì?Ưu nhược điểm? 
+Tại sao giúp tránh hiện tượng Exloding Gradient và Vanishing Gradient, giúp mô hình huấn luyện ổn định hơn?
+Tại sao giúp tăng tốc độ hội tụ?
+Tại sao giúp giảm hiện tượng overfitting?
+2/Dropout Layer là gì, ưu nhược điểm? -> Tắt ngẫu nhiên các node neuron trong mô hình trong mỗi lượt huấn luyện (Iteration)
+Tại sao ngăn được hiện tượng overfitting
+3/Fully Connected Layer
+
+B.Các hàm cơ bản
+1/Loss function -> dùng trong training phase
+-MAE (Mean absolute error) vs Mean Square Error
+-Cross Entropy Loss -> sử dụng cho các bài toán phân loại
+2/Evaluation function -> dùng trong Test phase
+3/Optimization function
+4/Activation function -> phá vỡ tính tuyến tính của neuron network
+5/Regularization function -> ngăn hiện tượng overfitting
+6/Distance function -> sử dụng trong các bài toán NLP 
+7/Embedding function

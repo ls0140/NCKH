@@ -1,0 +1,703 @@
+paper_id,title,abstract,publication_year,citation_count,rot_score,doi,source_url,rot_group
+26,Feature Weight Tuning for Recursive Neural Networks,"This paper addresses how a recursive neural network model can automatically
+leave out useless information and emphasize important evidence, in other words,
+to perform ""weight tuning"" for higher-level representation acquisition. We
+propose two models, Weighted Neural Network (WNN) and Binary-Expectation Neural
+Network (BENN), which automatically control how much one specific unit
+contributes to the higher-level representation. The proposed model can be
+viewed as incorporating a more powerful compositional function for embedding
+acquisition in recursive neural networks. Experimental results demonstrate the
+significant improvement over standard neural models.",2014,886,73.83333333333333,,http://arxiv.org/abs/1412.3714v2,High ROT
+4,Tutorial on Answering Questions about Images with Deep Learning,"Together with the development of more accurate methods in Computer Vision and
+Natural Language Understanding, holistic architectures that answer on questions
+about the content of real-world images have emerged. In this tutorial, we build
+a neural-based approach to answer questions about images. We base our tutorial
+on two datasets: (mostly on) DAQUAR, and (a bit on) VQA. With small tweaks the
+models that we present here can achieve a competitive performance on both
+datasets, in fact, they are among the best methods that use a combination of
+LSTM with a global, full frame CNN representation of an image. We hope that
+after reading this tutorial, the reader will be able to use Deep Learning
+frameworks, such as Keras and introduced Kraino, to build various architectures
+that will lead to a further performance improvement on this challenging task.",2016,757,75.7,,http://arxiv.org/abs/1610.01076v1,High ROT
+41,Robust Document Representations using Latent Topics and Metadata,"Task specific fine-tuning of a pre-trained neural language model using a
+custom softmax output layer is the de facto approach of late when dealing with
+document classification problems. This technique is not adequate when labeled
+examples are not available at training time and when the metadata artifacts in
+a document must be exploited. We address these challenges by generating
+document representations that capture both text and metadata artifacts in a
+task agnostic manner. Instead of traditional auto-regressive or auto-encoding
+based training, our novel self-supervised approach learns a soft-partition of
+the input space when generating text embeddings. Specifically, we employ a
+pre-learned topic model distribution as surrogate labels and construct a loss
+function based on KL divergence. Our solution also incorporates metadata
+explicitly rather than just augmenting them with text. The generated document
+embeddings exhibit compositional characteristics and are directly used by
+downstream classification tasks to create decision boundaries from a small
+number of labeled examples, thereby eschewing complicated recognition methods.
+We demonstrate through extensive evaluation that our proposed cross-model
+fusion solution outperforms several competitive baselines on multiple datasets.",2020,490,81.66666666666667,,http://arxiv.org/abs/2010.12681v1,High ROT
+37,"Beyond Scale: The Diversity Coefficient as a Data Quality Metric for
+  Variability in Natural Language Data","Current trends in pre-training Large Language Models (LLMs) primarily focus
+on the scaling of model and dataset size. While the quality of pre-training
+data is considered an important factor for training powerful LLMs, it remains a
+nebulous concept that has not been rigorously characterized. To this end, we
+propose a formalization of one key aspect of data quality -- measuring the
+variability of natural language data -- specifically via a measure we call the
+diversity coefficient. Our empirical analysis shows that the proposed diversity
+coefficient aligns with the intuitive properties of diversity and variability,
+e.g., it increases as the number of latent concepts increases. Then, we measure
+the diversity coefficient of publicly available pre-training datasets and
+demonstrate that their formal diversity is high compared to theoretical lower
+and upper bounds. Finally, we conduct a comprehensive set of controlled
+interventional experiments with GPT-2 and LLaMAv2 that demonstrate the
+diversity coefficient of pre-training data characterizes useful aspects of
+downstream model evaluation performance -- totaling 44 models of various sizes
+(51M to 7B parameters). We conclude that our formal notion of diversity is an
+important aspect of data quality that captures variability and causally leads
+to improved evaluation performance.",2023,252,84.0,,http://arxiv.org/abs/2306.13840v3,High ROT
+33,EvoMerge: Neuroevolution for Large Language Models,"Extensive fine-tuning on Large Language Models does not always yield better
+results. Oftentimes, models tend to get better at imitating one form of data
+without gaining greater reasoning ability and may even end up losing some
+intelligence. Here I introduce EvoMerge, a systematic approach to large
+language model training and merging. Leveraging model merging for weight
+crossover and fine-tuning for weight mutation, EvoMerge establishes an
+evolutionary process aimed at pushing models beyond the limits of conventional
+fine-tuning.",2024,176,88.0,,http://arxiv.org/abs/2402.00070v1,High ROT
+18,DopeLearning: A Computational Approach to Rap Lyrics Generation,"Writing rap lyrics requires both creativity to construct a meaningful,
+interesting story and lyrical skills to produce complex rhyme patterns, which
+form the cornerstone of good flow. We present a rap lyrics generation method
+that captures both of these aspects. First, we develop a prediction model to
+identify the next line of existing lyrics from a set of candidate next lines.
+This model is based on two machine-learning techniques: the RankSVM algorithm
+and a deep neural network model with a novel structure. Results show that the
+prediction model can identify the true next line among 299 randomly selected
+lines with an accuracy of 17%, i.e., over 50 times more likely than by random.
+Second, we employ the prediction model to combine lines from existing songs,
+producing lyrics with rhyme and a meaning. An evaluation of the produced lyrics
+shows that in terms of quantitative rhyme density, the method outperforms the
+best human rappers by 21%. The rap lyrics generator has been deployed as an
+online tool called DeepBeat, and the performance of the tool has been assessed
+by analyzing its usage logs. This analysis shows that machine-learned rankings
+correlate with user preferences.",2015,1017,92.45454545454545,,http://arxiv.org/abs/1505.04771v2,High ROT
+17,"Towards Explainable NLP: A Generative Explanation Framework for Text
+  Classification","Building explainable systems is a critical problem in the field of Natural
+Language Processing (NLP), since most machine learning models provide no
+explanations for the predictions. Existing approaches for explainable machine
+learning systems tend to focus on interpreting the outputs or the connections
+between inputs and outputs. However, the fine-grained information is often
+ignored, and the systems do not explicitly generate the human-readable
+explanations. To better alleviate this problem, we propose a novel generative
+explanation framework that learns to make classification decisions and generate
+fine-grained explanations at the same time. More specifically, we introduce the
+explainable factor and the minimum risk training approach that learn to
+generate more reasonable explanations. We construct two new datasets that
+contain summaries, rating scores, and fine-grained reasons. We conduct
+experiments on both datasets, comparing with several strong neural network
+baseline systems. Experimental results show that our method surpasses all
+baselines on both datasets, and is able to generate concise explanations at the
+same time.",2018,755,94.375,,http://arxiv.org/abs/1811.00196v2,High ROT
+29,Quantifying Uncertainties in Natural Language Processing Tasks,"Reliable uncertainty quantification is a first step towards building
+explainable, transparent, and accountable artificial intelligent systems.
+Recent progress in Bayesian deep learning has made such quantification
+realizable. In this paper, we propose novel methods to study the benefits of
+characterizing model and data uncertainties for natural language processing
+(NLP) tasks. With empirical experiments on sentiment analysis, named entity
+recognition, and language modeling using convolutional and recurrent neural
+network models, we show that explicitly modeling uncertainties is not only
+necessary to measure output confidence levels, but also useful at enhancing
+model performances in various NLP tasks.",2018,755,94.375,,http://arxiv.org/abs/1811.07253v1,High ROT
+39,Sentence Pair Scoring: Towards Unified Framework for Text Comprehension,"We review the task of Sentence Pair Scoring, popular in the literature in
+various forms - viewed as Answer Sentence Selection, Semantic Text Scoring,
+Next Utterance Ranking, Recognizing Textual Entailment, Paraphrasing or e.g. a
+component of Memory Networks.
+  We argue that all such tasks are similar from the model perspective and
+propose new baselines by comparing the performance of common IR metrics and
+popular convolutional, recurrent and attention-based neural models across many
+Sentence Pair Scoring tasks and datasets. We discuss the problem of evaluating
+randomized models, propose a statistically grounded methodology, and attempt to
+improve comparisons by releasing new datasets that are much harder than some of
+the currently used well explored benchmarks. We introduce a unified open source
+software framework with easily pluggable models and tasks, which enables us to
+experiment with multi-task reusability of trained sentence model. We set a new
+state-of-art in performance on the Ubuntu Dialogue dataset.",2016,1004,100.4,,http://arxiv.org/abs/1603.06127v4,High ROT
+44,"Recurrent Neural Networks with External Memory for Language
+  Understanding","Recurrent Neural Networks (RNNs) have become increasingly popular for the
+task of language understanding. In this task, a semantic tagger is deployed to
+associate a semantic label to each word in an input sequence. The success of
+RNN may be attributed to its ability to memorize long-term dependence that
+relates the current-time semantic label prediction to the observations many
+time instances away. However, the memory capacity of simple RNNs is limited
+because of the gradient vanishing and exploding problem. We propose to use an
+external memory to improve memorization capability of RNNs. We conducted
+experiments on the ATIS dataset, and observed that the proposed model was able
+to achieve the state-of-the-art results. We compare our proposed model with
+alternative models and report analysis results that may provide insights for
+future research.",2015,1157,105.18181818181819,,http://arxiv.org/abs/1506.00195v1,High ROT
+22,Transformer Quality in Linear Time,"We revisit the design choices in Transformers, and propose methods to address
+their weaknesses in handling long sequences. First, we propose a simple layer
+named gated attention unit, which allows the use of a weaker single-head
+attention with minimal quality loss. We then propose a linear approximation
+method complementary to this new layer, which is accelerator-friendly and
+highly competitive in quality. The resulting model, named FLASH, matches the
+perplexity of improved Transformers over both short (512) and long (8K) context
+lengths, achieving training speedups of up to 4.9$\times$ on Wiki-40B and
+12.1$\times$ on PG-19 for auto-regressive language modeling, and 4.8$\times$ on
+C4 for masked language modeling.",2022,425,106.25,,http://arxiv.org/abs/2202.10447v2,High ROT
+2,pix2code: Generating Code from a Graphical User Interface Screenshot,"Transforming a graphical user interface screenshot created by a designer into
+computer code is a typical task conducted by a developer in order to build
+customized software, websites, and mobile applications. In this paper, we show
+that deep learning methods can be leveraged to train a model end-to-end to
+automatically generate code from a single input image with over 77% of accuracy
+for three different platforms (i.e. iOS, Android and web-based technologies).",2017,975,108.33333333333333,,http://arxiv.org/abs/1705.07962v2,High ROT
+48,End-to-End Attention-based Large Vocabulary Speech Recognition,"Many of the current state-of-the-art Large Vocabulary Continuous Speech
+Recognition Systems (LVCSR) are hybrids of neural networks and Hidden Markov
+Models (HMMs). Most of these systems contain separate components that deal with
+the acoustic modelling, language modelling and sequence decoding. We
+investigate a more direct approach in which the HMM is replaced with a
+Recurrent Neural Network (RNN) that performs sequence prediction directly at
+the character level. Alignment between the input features and the desired
+character sequence is learned automatically by an attention mechanism built
+into the RNN. For each predicted character, the attention mechanism scans the
+input sequence and chooses relevant frames. We propose two methods to speed up
+this operation: limiting the scan to a subset of most promising frames and
+pooling over time the information contained in neighboring frames, thereby
+reducing source sequence length. Integrating an n-gram language model into the
+decoding process yields recognition accuracies similar to other HMM-free
+RNN-based approaches.",2015,1280,116.36363636363636,,http://arxiv.org/abs/1508.04395v2,High ROT
+51,Incorporating Copying Mechanism in Sequence-to-Sequence Learning,"We address an important problem in sequence-to-sequence (Seq2Seq) learning
+referred to as copying, in which certain segments in the input sequence are
+selectively replicated in the output sequence. A similar phenomenon is
+observable in human language communication. For example, humans tend to repeat
+entity names or even long phrases in conversation. The challenge with regard to
+copying in Seq2Seq is that new machinery is needed to decide when to perform
+the operation. In this paper, we incorporate copying into neural network-based
+Seq2Seq learning and propose a new model called CopyNet with encoder-decoder
+structure. CopyNet can nicely integrate the regular way of word generation in
+the decoder with the new copying mechanism which can choose sub-sequences in
+the input sequence and put them at proper places in the output sequence. Our
+empirical study on both synthetic data sets and real world data sets
+demonstrates the efficacy of CopyNet. For example, CopyNet can outperform
+regular RNN-based model with remarkable margins on text summarization tasks.",2016,1257,125.7,,http://arxiv.org/abs/1603.06393v3,High ROT
+49,Towards Neural Network-based Reasoning,"We propose Neural Reasoner, a framework for neural network-based reasoning
+over natural language sentences. Given a question, Neural Reasoner can infer
+over multiple supporting facts and find an answer to the question in specific
+forms. Neural Reasoner has 1) a specific interaction-pooling mechanism,
+allowing it to examine multiple facts, and 2) a deep architecture, allowing it
+to model the complicated logical relations in reasoning tasks. Assuming no
+particular structure exists in the question and facts, Neural Reasoner is able
+to accommodate different types of reasoning and different forms of language
+expressions. Despite the model complexity, Neural Reasoner can still be trained
+effectively in an end-to-end manner. Our empirical studies show that Neural
+Reasoner can outperform existing neural reasoning systems with remarkable
+margins on two difficult artificial tasks (Positional Reasoning and Path
+Finding) proposed in [8]. For example, it improves the accuracy on Path
+Finding(10K) from 33.4% [6] to over 98%.",2015,1420,129.0909090909091,,http://arxiv.org/abs/1508.05508v1,High ROT
+50,"What to talk about and how? Selective Generation using LSTMs with
+  Coarse-to-Fine Alignment","We propose an end-to-end, domain-independent neural encoder-aligner-decoder
+model for selective generation, i.e., the joint task of content selection and
+surface realization. Our model first encodes a full set of over-determined
+database event records via an LSTM-based recurrent neural network, then
+utilizes a novel coarse-to-fine aligner to identify the small subset of salient
+records to talk about, and finally employs a decoder to generate free-form
+descriptions of the aligned, selected records. Our model achieves the best
+selection and generation results reported to-date (with 59% relative
+improvement in generation) on the benchmark WeatherGov dataset, despite using
+no specialized features or linguistic resources. Using an improved k-nearest
+neighbor beam filter helps further. We also perform a series of ablations and
+visualizations to elucidate the contributions of our key model components.
+Lastly, we evaluate the generalizability of our model on the RoboCup dataset,
+and get results that are competitive with or better than the state-of-the-art,
+despite being severely data-starved.",2015,1450,131.8181818181818,,http://arxiv.org/abs/1509.00838v2,High ROT
+45,"A Neural Network Approach to Context-Sensitive Generation of
+  Conversational Responses","We present a novel response generation system that can be trained end to end
+on large quantities of unstructured Twitter conversations. A neural network
+architecture is used to address sparsity issues that arise when integrating
+contextual information into classic statistical models, allowing the system to
+take into account previous dialog utterances. Our dynamic-context generative
+models show consistent gains over both context-sensitive and
+non-context-sensitive Machine Translation and Information Retrieval baselines.",2015,1456,132.36363636363637,,http://arxiv.org/abs/1506.06714v1,High ROT
+25,Dirichlet Variational Autoencoder for Text Modeling,"We introduce an improved variational autoencoder (VAE) for text modeling with
+topic information explicitly modeled as a Dirichlet latent variable. By
+providing the proposed model topic awareness, it is more superior at
+reconstructing input texts. Furthermore, due to the inherent interactions
+between the newly introduced Dirichlet variable and the conventional
+multivariate Gaussian variable, the model is less prone to KL divergence
+vanishing. We derive the variational lower bound for the new model and conduct
+experiments on four different data sets. The results show that the proposed
+model is superior at text reconstruction across the latent space and
+classifications on learned representations have higher test accuracies.",2018,1089,136.125,,http://arxiv.org/abs/1811.00135v1,High ROT
+6,Document Image Coding and Clustering for Script Discrimination,"The paper introduces a new method for discrimination of documents given in
+different scripts. The document is mapped into a uniformly coded text of
+numerical values. It is derived from the position of the letters in the text
+line, based on their typographical characteristics. Each code is considered as
+a gray level. Accordingly, the coded text determines a 1-D image, on which
+texture analysis by run-length statistics and local binary pattern is
+performed. It defines feature vectors representing the script content of the
+document. A modified clustering approach employed on document feature vector
+groups documents written in the same script. Experimentation performed on two
+custom oriented databases of historical documents in old Cyrillic, angular and
+round Glagolitic as well as Antiqua and Fraktur scripts demonstrates the
+superiority of the proposed method with respect to well-known methods in the
+state-of-the-art.",2016,1530,153.0,,http://arxiv.org/abs/1609.06492v1,High ROT
+5,Learning Visual Question Answering by Bootstrapping Hard Attention,"Attention mechanisms in biological perception are thought to select subsets
+of perceptual information for more sophisticated processing which would be
+prohibitive to perform on all sensory inputs. In computer vision, however,
+there has been relatively little exploration of hard attention, where some
+information is selectively ignored, in spite of the success of soft attention,
+where information is re-weighted and aggregated, but never filtered out. Here,
+we introduce a new approach for hard attention and find it achieves very
+competitive performance on a recently-released visual question answering
+datasets, equalling and in some cases surpassing similar soft attention
+architectures while entirely ignoring some features. Even though the hard
+attention mechanism is thought to be non-differentiable, we found that the
+feature magnitudes correlate with semantic relevance, and provide a useful
+signal for our mechanism's attentional selection criterion. Because hard
+attention selects important features of the input information, it can also be
+more efficient than analogous soft attention mechanisms. This is especially
+important for recent approaches that use non-local pairwise operations, whereby
+computational and memory costs are quadratic in the size of the set of
+features.",2018,1889,236.125,,http://arxiv.org/abs/1808.00300v1,High ROT
+19,"The Next Big Thing(s) in Unsupervised Machine Learning: Five Lessons
+  from Infant Learning","After a surge in popularity of supervised Deep Learning, the desire to reduce
+the dependence on curated, labelled data sets and to leverage the vast
+quantities of unlabelled data available recently triggered renewed interest in
+unsupervised learning algorithms. Despite a significantly improved performance
+due to approaches such as the identification of disentangled latent
+representations, contrastive learning, and clustering optimisations, the
+performance of unsupervised machine learning still falls short of its
+hypothesised potential. Machine learning has previously taken inspiration from
+neuroscience and cognitive science with great success. However, this has mostly
+been based on adult learners with access to labels and a vast amount of prior
+knowledge. In order to push unsupervised machine learning forward, we argue
+that developmental science of infant cognition might hold the key to unlocking
+the next generation of unsupervised learning approaches. Conceptually, human
+infant learning is the closest biological parallel to artificial unsupervised
+learning, as infants too must learn useful representations from unlabelled
+data. In contrast to machine learning, these new representations are learned
+rapidly and from relatively few examples. Moreover, infants learn robust
+representations that can be used flexibly and efficiently in a number of
+different tasks and contexts. We identify five crucial factors enabling
+infants' quality and speed of learning, assess the extent to which these have
+already been exploited in machine learning, and propose how further adoption of
+these factors can give rise to previously unseen performance levels in
+unsupervised learning.",2020,1672,278.6666666666667,,http://arxiv.org/abs/2009.08497v1,High ROT
+42,Collaborative Storytelling with Large-scale Neural Language Models,"Storytelling plays a central role in human socializing and entertainment.
+However, much of the research on automatic storytelling generation assumes that
+stories will be generated by an agent without any human interaction. In this
+paper, we introduce the task of collaborative storytelling, where an artificial
+intelligence agent and a person collaborate to create a unique story by taking
+turns adding to it. We present a collaborative storytelling system which works
+with a human storyteller to create a story by generating new utterances based
+on the story so far. We constructed the storytelling system by tuning a
+publicly-available large scale language model on a dataset of writing prompts
+and their accompanying fictional works. We identify generating sufficiently
+human-like utterances to be an important technical issue and propose a
+sample-and-rank approach to improve utterance quality. Quantitative evaluation
+shows that our approach outperforms a baseline, and we present qualitative
+evaluation of our system's capabilities.",2020,1688,281.3333333333333,,http://arxiv.org/abs/2011.10208v1,High ROT
+30,"NUIG-Shubhanker@Dravidian-CodeMix-FIRE2020: Sentiment Analysis of
+  Code-Mixed Dravidian text using XLNet","Social media has penetrated into multilingual societies, however most of them
+use English to be a preferred language for communication. So it looks natural
+for them to mix their cultural language with English during conversations
+resulting in abundance of multilingual data, call this code-mixed data,
+available in todays' world.Downstream NLP tasks using such data is challenging
+due to the semantic nature of it being spread across multiple languages.One
+such Natural Language Processing task is sentiment analysis, for this we use an
+auto-regressive XLNet model to perform sentiment analysis on code-mixed
+Tamil-English and Malayalam-English datasets.",2020,1799,299.8333333333333,,http://arxiv.org/abs/2010.07773v1,High ROT
+7,"hyper-sinh: An Accurate and Reliable Function from Shallow to Deep
+  Learning in TensorFlow and Keras","This paper presents the 'hyper-sinh', a variation of the m-arcsinh activation
+function suitable for Deep Learning (DL)-based algorithms for supervised
+learning, such as Convolutional Neural Networks (CNN). hyper-sinh, developed in
+the open source Python libraries TensorFlow and Keras, is thus described and
+validated as an accurate and reliable activation function for both shallow and
+deep neural networks. Improvements in accuracy and reliability in image and
+text classification tasks on five (N = 5) benchmark data sets available from
+Keras are discussed. Experimental results demonstrate the overall competitive
+classification performance of both shallow and deep neural networks, obtained
+via this novel function. This function is evaluated with respect to gold
+standard activation functions, demonstrating its overall competitive accuracy
+and reliability for both image and text classification.",2020,1908,318.0,,http://arxiv.org/abs/2011.07661v1,High ROT
+20,"Generating Factoid Questions With Recurrent Neural Networks: The 30M
+  Factoid Question-Answer Corpus","Over the past decade, large-scale supervised learning corpora have enabled
+machine learning researchers to make substantial advances. However, to this
+date, there are no large-scale question-answer corpora available. In this paper
+we present the 30M Factoid Question-Answer Corpus, an enormous question answer
+pair corpus produced by applying a novel neural network architecture on the
+knowledge base Freebase to transduce facts into natural language questions. The
+produced question answer pairs are evaluated both by human evaluators and using
+automatic evaluation metrics, including well-established machine translation
+and sentence similarity metrics. Across all evaluation criteria the
+question-generation model outperforms the competing template-based baseline.
+Furthermore, when presented to human evaluators, the generated questions appear
+comparable in quality to real human-generated questions.",2016,4804,480.4,,http://arxiv.org/abs/1603.06807v2,High ROT
+32,"HULAT at SemEval-2023 Task 9: Data augmentation for pre-trained
+  transformers applied to Multilingual Tweet Intimacy Analysis","This paper describes our participation in SemEval-2023 Task 9, Intimacy
+Analysis of Multilingual Tweets. We fine-tune some of the most popular
+transformer models with the training dataset and synthetic data generated by
+different data augmentation techniques. During the development phase, our best
+results were obtained by using XLM-T. Data augmentation techniques provide a
+very slight improvement in the results. Our system ranked in the 27th position
+out of the 45 participating systems. Despite its modest results, our system
+shows promising results in languages such as Portuguese, English, and Dutch.
+All our code is available in the repository
+\url{https://github.com/isegura/hulat_intimacy}.",2023,15,5.0,,http://arxiv.org/abs/2302.12794v1,Low ROT
+24,"EvoGPT-f: An Evolutionary GPT Framework for Benchmarking Formal Math
+  Languages","Formal mathematics is the discipline of translating mathematics into a
+programming language in which any statement can be unequivocally checked by a
+computer. Mathematicians and computer scientists have spent decades of
+painstaking formalization efforts developing languages such as Coq, HOL, and
+Lean. Machine learning research has converged on these formal math corpora and
+given rise to an assortment of methodologies to aid in interactive and
+automated theorem proving. However, these papers have primarily focused on one
+method, for one proof task, in one language. This paper introduces EvoGPT-f: a
+novel evolutionary framework for the first systematic quantitative analysis of
+the differential machine learnability of five formal math corpora (Lean 3, Lean
+4, Coq, HOL 4, HOL Light) using four tokenization methods (character,
+word-level, Byte Pair Encoding and StarCoder tokenizer). This paper does not
+put to rest the question of the ""best"" or ""easiest"" language to learn. Rather,
+this framework and preliminary findings begin to illuminate the differential
+machine learnability of these languages, offering a foundation to forge more
+systematic quantitative and qualitative comparative research across
+communities.",2024,16,8.0,,http://arxiv.org/abs/2402.16878v1,Low ROT
+13,"LLM2TEA: Agentic AI Designer Finds Innovative Objects with Generative
+  Evolutionary Multitasking","In this paper, we introduce LLM-driven MultiTask Evolutionary Algorithm
+(LLM2TEA), the first agentic AI designer within a generative evolutionary
+multitasking (GEM) framework that promotes the crossover and synergy of designs
+from multiple domains, leading to innovative solutions that transcend
+individual disciplines. Of particular interest is the discovery of objects that
+are not only innovative but also conform to the physical specifications of the
+real world in science and engineering. LLM2TEA comprises a large language model
+to initialize a population of genotypes (defined by text prompts) describing
+the objects of interest, a text-to-3D generative model to produce phenotypes
+from these prompts, a classifier to interpret the semantic representations of
+the objects, and a physics simulation model to assess their physical
+properties. We propose several novel LLM-based multitask evolutionary operators
+to guide the search toward the discovery of high-performing practical objects.
+Experimental results in conceptual design optimization validate the
+effectiveness of LLM2TEA, revealing from 97\% to 174\% improvement in the
+diversity of innovative objects compared to the present text-to-3D generative
+model baseline. In addition, more than 73\% of the generated designs have
+better physical performance than the top 1\% percentile of the designs
+generated in the baseline. Moreover, LLM2TEA generates designs that are not
+only aesthetically creative but also functional in real-world applications.
+Several of these designs have been successfully 3D-printed, emphasizing the
+proposed approach's capacity to transform AI-generated outputs into tangible
+physical objects. The designs produced by LLM2TEA meets practical requirements
+while showcasing creative and innovative features, underscoring its potential
+applications in complex design optimization and discovery.",2024,27,13.5,,http://arxiv.org/abs/2406.14917v2,Low ROT
+31,Formal Algorithms for Transformers,"This document aims to be a self-contained, mathematically precise overview of
+transformer architectures and algorithms (*not* results). It covers what
+transformers are, how they are trained, what they are used for, their key
+architectural components, and a preview of the most prominent models. The
+reader is assumed to be familiar with basic ML terminology and simpler neural
+network architectures such as MLPs.",2022,60,15.0,,http://arxiv.org/abs/2207.09238v1,Low ROT
+12,Symbolic Discovery of Optimization Algorithms,"We present a method to formulate algorithm discovery as program search, and
+apply it to discover optimization algorithms for deep neural network training.
+We leverage efficient search techniques to explore an infinite and sparse
+program space. To bridge the large generalization gap between proxy and target
+tasks, we also introduce program selection and simplification strategies. Our
+method discovers a simple and effective optimization algorithm, $\textbf{Lion}$
+($\textit{Evo$\textbf{L}$ved S$\textbf{i}$gn M$\textbf{o}$me$\textbf{n}$tum}$).
+It is more memory-efficient than Adam as it only keeps track of the momentum.
+Different from adaptive optimizers, its update has the same magnitude for each
+parameter calculated through the sign operation. We compare Lion with widely
+used optimizers, such as Adam and Adafactor, for training a variety of models
+on different tasks. On image classification, Lion boosts the accuracy of ViT by
+up to 2% on ImageNet and saves up to 5x the pre-training compute on JFT. On
+vision-language contrastive learning, we achieve 88.3% $\textit{zero-shot}$ and
+91.1% $\textit{fine-tuning}$ accuracy on ImageNet, surpassing the previous best
+results by 2% and 0.1%, respectively. On diffusion models, Lion outperforms
+Adam by achieving a better FID score and reducing the training compute by up to
+2.3x. For autoregressive, masked language modeling, and fine-tuning, Lion
+exhibits a similar or better performance compared to Adam. Our analysis of Lion
+reveals that its performance gain grows with the training batch size. It also
+requires a smaller learning rate than Adam due to the larger norm of the update
+produced by the sign function. Additionally, we examine the limitations of Lion
+and identify scenarios where its improvements are small or not statistically
+significant. Lion is also successfully deployed in production systems such as
+Google search ads CTR model.",2023,47,15.666666666666666,,http://arxiv.org/abs/2302.06675v4,Low ROT
+9,"From Neural Activations to Concepts: A Survey on Explaining Concepts in
+  Neural Networks","In this paper, we review recent approaches for explaining concepts in neural
+networks. Concepts can act as a natural link between learning and reasoning:
+once the concepts are identified that a neural learning system uses, one can
+integrate those concepts with a reasoning system for inference or use a
+reasoning system to act upon them to improve or enhance the learning system. On
+the other hand, knowledge can not only be extracted from neural networks but
+concept knowledge can also be inserted into neural network architectures. Since
+integrating learning and reasoning is at the core of neuro-symbolic AI, the
+insights gained from this survey can serve as an important step towards
+realizing neuro-symbolic AI based on explainable concepts.",2023,49,16.333333333333332,,http://arxiv.org/abs/2310.11884v2,Low ROT
+15,"STL: A Signed and Truncated Logarithm Activation Function for Neural
+  Networks","Activation functions play an essential role in neural networks. They provide
+the non-linearity for the networks. Therefore, their properties are important
+for neural networks' accuracy and running performance. In this paper, we
+present a novel signed and truncated logarithm function as activation function.
+The proposed activation function has significantly better mathematical
+properties, such as being odd function, monotone, differentiable, having
+unbounded value range, and a continuous nonzero gradient. These properties make
+it an excellent choice as an activation function. We compare it with other
+well-known activation functions in several well-known neural networks. The
+results confirm that it is the state-of-the-art. The suggested activation
+function can be applied in a large range of neural networks where activation
+functions are necessary.",2023,50,16.666666666666668,,http://arxiv.org/abs/2307.16389v1,Low ROT
+14,QTN-VQC: An End-to-End Learning framework for Quantum Neural Networks,"The advent of noisy intermediate-scale quantum (NISQ) computers raises a
+crucial challenge to design quantum neural networks for fully quantum learning
+tasks. To bridge the gap, this work proposes an end-to-end learning framework
+named QTN-VQC, by introducing a trainable quantum tensor network (QTN) for
+quantum embedding on a variational quantum circuit (VQC). The architecture of
+QTN is composed of a parametric tensor-train network for feature extraction and
+a tensor product encoding for quantum embedding. We highlight the QTN for
+quantum embedding in terms of two perspectives: (1) we theoretically
+characterize QTN by analyzing its representation power of input features; (2)
+QTN enables an end-to-end parametric model pipeline, namely QTN-VQC, from the
+generation of quantum embedding to the output measurement. Our experiments on
+the MNIST dataset demonstrate the advantages of QTN for quantum embedding over
+other quantum embedding approaches.",2021,98,19.6,,http://arxiv.org/abs/2110.03861v3,Low ROT
+3,"Show me your NFT and I tell you how it will perform: Multimodal
+  representation learning for NFT selling price prediction","Non-Fungible Tokens (NFTs) represent deeds of ownership, based on blockchain
+technologies and smart contracts, of unique crypto assets on digital art forms
+(e.g., artworks or collectibles). In the spotlight after skyrocketing in 2021,
+NFTs have attracted the attention of crypto enthusiasts and investors intent on
+placing promising investments in this profitable market. However, the NFT
+financial performance prediction has not been widely explored to date.
+  In this work, we address the above problem based on the hypothesis that NFT
+images and their textual descriptions are essential proxies to predict the NFT
+selling prices. To this purpose, we propose MERLIN, a novel multimodal deep
+learning framework designed to train Transformer-based language and visual
+models, along with graph neural network models, on collections of NFTs' images
+and texts. A key aspect in MERLIN is its independence on financial features, as
+it exploits only the primary data a user interested in NFT trading would like
+to deal with, i.e., NFT images and textual descriptions. By learning dense
+representations of such data, a price-category classification task is performed
+by MERLIN models, which can also be tuned according to user preferences in the
+inference phase to mimic different risk-return investment profiles.
+Experimental evaluation on a publicly available dataset has shown that MERLIN
+models achieve significant performances according to several financial
+assessment criteria, fostering profitable investments, and also beating
+baseline machine-learning classifiers based on financial features.",2023,64,21.333333333333332,,http://arxiv.org/abs/2302.01676v2,Low ROT
+11,Liquid Structural State-Space Models,"A proper parametrization of state transition matrices of linear state-space
+models (SSMs) followed by standard nonlinearities enables them to efficiently
+learn representations from sequential data, establishing the state-of-the-art
+on a large series of long-range sequence modeling benchmarks. In this paper, we
+show that we can improve further when the structural SSM such as S4 is given by
+a linear liquid time-constant (LTC) state-space model. LTC neural networks are
+causal continuous-time neural networks with an input-dependent state transition
+module, which makes them learn to adapt to incoming inputs at inference. We
+show that by using a diagonal plus low-rank decomposition of the state
+transition matrix introduced in S4, and a few simplifications, the LTC-based
+structural state-space model, dubbed Liquid-S4, achieves the new
+state-of-the-art generalization across sequence modeling tasks with long-term
+dependencies such as image, text, audio, and medical time-series, with an
+average performance of 87.32% on the Long-Range Arena benchmark. On the full
+raw Speech Command recognition, dataset Liquid-S4 achieves 96.78% accuracy with
+a 30% reduction in parameter counts compared to S4. The additional gain in
+performance is the direct result of the Liquid-S4's kernel structure that takes
+into account the similarities of the input sequence samples during training and
+inference.",2022,86,21.5,,http://arxiv.org/abs/2209.12951v1,Low ROT
+35,"TextConvoNet:A Convolutional Neural Network based Architecture for Text
+  Classification","In recent years, deep learning-based models have significantly improved the
+Natural Language Processing (NLP) tasks. Specifically, the Convolutional Neural
+Network (CNN), initially used for computer vision, has shown remarkable
+performance for text data in various NLP problems. Most of the existing
+CNN-based models use 1-dimensional convolving filters n-gram detectors), where
+each filter specialises in extracting n-grams features of a particular input
+word embedding. The input word embeddings, also called sentence matrix, is
+treated as a matrix where each row is a word vector. Thus, it allows the model
+to apply one-dimensional convolution and only extract n-gram based features
+from a sentence matrix. These features can be termed as intra-sentence n-gram
+features. To the extent of our knowledge, all the existing CNN models are based
+on the aforementioned concept. In this paper, we present a CNN-based
+architecture TextConvoNet that not only extracts the intra-sentence n-gram
+features but also captures the inter-sentence n-gram features in input text
+data. It uses an alternative approach for input matrix representation and
+applies a two-dimensional multi-scale convolutional operation on the input. To
+evaluate the performance of TextConvoNet, we perform an experimental study on
+five text classification datasets. The results are evaluated by using various
+performance metrics. The experimental results show that the presented
+TextConvoNet outperforms state-of-the-art machine learning and deep learning
+models for text classification purposes.",2022,87,21.75,,http://arxiv.org/abs/2203.05173v1,Low ROT
+8,Large Language Model Guided Tree-of-Thought,"In this paper, we introduce the Tree-of-Thought (ToT) framework, a novel
+approach aimed at improving the problem-solving capabilities of auto-regressive
+large language models (LLMs). The ToT technique is inspired by the human mind's
+approach for solving complex reasoning tasks through trial and error. In this
+process, the human mind explores the solution space through a tree-like thought
+process, allowing for backtracking when necessary. To implement ToT as a
+software system, we augment an LLM with additional modules including a prompter
+agent, a checker module, a memory module, and a ToT controller. In order to
+solve a given problem, these modules engage in a multi-round conversation with
+the LLM. The memory module records the conversation and state history of the
+problem solving process, which allows the system to backtrack to the previous
+steps of the thought-process and explore other directions from there. To verify
+the effectiveness of the proposed technique, we implemented a ToT-based solver
+for the Sudoku Puzzle. Experimental results show that the ToT framework can
+significantly increase the success rate of Sudoku puzzle solving. Our
+implementation of the ToT-based Sudoku solver is available on GitHub:
+\url{https://github.com/jieyilong/tree-of-thought-puzzle-solver}.",2023,67,22.333333333333332,,http://arxiv.org/abs/2305.08291v1,Low ROT
+43,Exponentially Faster Language Modelling,"Language models only really need to use an exponential fraction of their
+neurons for individual inferences. As proof, we present UltraFastBERT, a BERT
+variant that uses 0.3% of its neurons during inference while performing on par
+with similar BERT models. UltraFastBERT selectively engages just 12 out of 4095
+neurons for each layer inference. This is achieved by replacing feedforward
+networks with fast feedforward networks (FFFs). While no truly efficient
+implementation currently exists to unlock the full acceleration potential of
+conditional neural execution, we provide high-level CPU code achieving 78x
+speedup over the optimized baseline feedforward implementation, and a PyTorch
+implementation delivering 40x speedup over the equivalent batched feedforward
+inference. We publish our training code, benchmarking setup, and model weights.",2023,73,24.333333333333332,,http://arxiv.org/abs/2311.10770v2,Low ROT
+23,Continual Learning of Natural Language Processing Tasks: A Survey,"Continual learning (CL) is a learning paradigm that emulates the human
+capability of learning and accumulating knowledge continually without
+forgetting the previously learned knowledge and also transferring the learned
+knowledge to help learn new tasks better. This survey presents a comprehensive
+review and analysis of the recent progress of CL in NLP, which has significant
+differences from CL in computer vision and machine learning. It covers (1) all
+CL settings with a taxonomy of existing techniques; (2) catastrophic forgetting
+(CF) prevention, (3) knowledge transfer (KT), which is particularly important
+for NLP tasks; and (4) some theory and the hidden challenge of inter-task class
+separation (ICS). (1), (3) and (4) have not been included in the existing
+survey. Finally, a list of future directions is discussed.",2022,100,25.0,,http://arxiv.org/abs/2211.12701v2,Low ROT
+34,Large Language Models and Emergence: A Complex Systems Perspective,"Emergence is a concept in complexity science that describes how many-body
+systems manifest novel higher-level properties, properties that can be
+described by replacing high-dimensional mechanisms with lower-dimensional
+effective variables and theories. This is captured by the idea ""more is
+different"". Intelligence is a consummate emergent property manifesting
+increasingly efficient -- cheaper and faster -- uses of emergent capabilities
+to solve problems. This is captured by the idea ""less is more"". In this paper,
+we first examine claims that Large Language Models exhibit emergent
+capabilities, reviewing several approaches to quantifying emergence, and
+secondly ask whether LLMs possess emergent intelligence.",2025,25,25.0,,http://arxiv.org/abs/2506.11135v1,Low ROT
+10,Creating Trustworthy LLMs: Dealing with Hallucinations in Healthcare AI,"Large language models have proliferated across multiple domains in as short
+period of time. There is however hesitation in the medical and healthcare
+domain towards their adoption because of issues like factuality, coherence, and
+hallucinations. Give the high stakes nature of healthcare, many researchers
+have even cautioned against its usage until these issues are resolved. The key
+to the implementation and deployment of LLMs in healthcare is to make these
+models trustworthy, transparent (as much possible) and explainable. In this
+paper we describe the key elements in creating reliable, trustworthy, and
+unbiased models as a necessary condition for their adoption in healthcare.
+Specifically we focus on the quantification, validation, and mitigation of
+hallucinations in the context in healthcare. Lastly, we discuss how the future
+of LLMs in healthcare may look like.",2023,87,29.0,,http://arxiv.org/abs/2311.01463v1,Low ROT
+47,"Building End-To-End Dialogue Systems Using Generative Hierarchical
+  Neural Network Models","We investigate the task of building open domain, conversational dialogue
+systems based on large dialogue corpora using generative models. Generative
+models produce system responses that are autonomously generated word-by-word,
+opening up the possibility for realistic, flexible interactions. In support of
+this goal, we extend the recently proposed hierarchical recurrent
+encoder-decoder neural network to the dialogue domain, and demonstrate that
+this model is competitive with state-of-the-art neural language models and
+back-off n-gram models. We investigate the limitations of this and similar
+approaches, and show how its performance can be improved by bootstrapping the
+learning from a larger question-answer pair corpus and from pretrained word
+embeddings.",2015,340,30.90909090909091,,http://arxiv.org/abs/1507.04808v3,Low ROT
+21,"Adversarial Attacks on Knowledge Graph Embeddings via Instance
+  Attribution Methods","Despite the widespread use of Knowledge Graph Embeddings (KGE), little is
+known about the security vulnerabilities that might disrupt their intended
+behaviour. We study data poisoning attacks against KGE models for link
+prediction. These attacks craft adversarial additions or deletions at training
+time to cause model failure at test time. To select adversarial deletions, we
+propose to use the model-agnostic instance attribution methods from
+Interpretable Machine Learning, which identify the training instances that are
+most influential to a neural model's predictions on test instances. We use
+these influential triples as adversarial deletions. We further propose a
+heuristic method to replace one of the two entities in each influential triple
+to generate adversarial additions. Our experiments show that the proposed
+strategies outperform the state-of-art data poisoning attacks on KGE models and
+improve the MRR degradation due to the attacks by up to 62% over the baselines.",2021,184,36.8,,http://arxiv.org/abs/2111.03120v1,Low ROT
+46,"The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured
+  Multi-Turn Dialogue Systems","This paper introduces the Ubuntu Dialogue Corpus, a dataset containing almost
+1 million multi-turn dialogues, with a total of over 7 million utterances and
+100 million words. This provides a unique resource for research into building
+dialogue managers based on neural language models that can make use of large
+amounts of unlabeled data. The dataset has both the multi-turn property of
+conversations in the Dialog State Tracking Challenge datasets, and the
+unstructured nature of interactions from microblog services such as Twitter. We
+also describe two neural learning architectures suitable for analyzing this
+dataset, and provide benchmark performance on the task of selecting the best
+next response.",2015,432,39.27272727272727,,http://arxiv.org/abs/1506.08909v3,Low ROT
+27,"A Recurrent Neural Model with Attention for the Recognition of Chinese
+  Implicit Discourse Relations","We introduce an attention-based Bi-LSTM for Chinese implicit discourse
+relations and demonstrate that modeling argument pairs as a joint sequence can
+outperform word order-agnostic approaches. Our model benefits from a partial
+sampling scheme and is conceptually simple, yet achieves state-of-the-art
+performance on the Chinese Discourse Treebank. We also visualize its attention
+activity to illustrate the model's ability to selectively focus on the relevant
+parts of an input sequence.",2017,414,46.0,,http://arxiv.org/abs/1704.08092v1,Low ROT
+16,Adaptive Integrated Layered Attention (AILA),"We propose Adaptive Integrated Layered Attention (AILA), a neural network
+architecture that combines dense skip connections with different mechanisms for
+adaptive feature reuse across network layers. We evaluate AILA on three
+challenging tasks: price forecasting for various commodities and indices (S&P
+500, Gold, US dollar Futures, Coffee, Wheat), image recognition using the
+CIFAR-10 dataset, and sentiment analysis on the IMDB movie review dataset. In
+all cases, AILA matches strong deep learning baselines (LSTMs, Transformers,
+and ResNets), achieving it at a fraction of the training and inference time.
+Notably, we implement and test two versions of the model - AILA-Architecture 1,
+which uses simple linear layers as the connection mechanism between layers, and
+AILA-Architecture 2, which implements an attention mechanism to selectively
+focus on outputs from previous layers. Both architectures are applied in a
+single-task learning setting, with each model trained separately for individual
+tasks. Results confirm that AILA's adaptive inter-layer connections yield
+robust gains by flexibly reusing pertinent features at multiple network depths.
+The AILA approach thus presents an extension to existing architectures,
+improving long-range sequence modeling, image recognition with optimised
+computational speed, and SOTA classification performance in practice.",2025,48,48.0,,http://arxiv.org/abs/2503.22742v2,Low ROT
+40,Poisoning Knowledge Graph Embeddings via Relation Inference Patterns,"We study the problem of generating data poisoning attacks against Knowledge
+Graph Embedding (KGE) models for the task of link prediction in knowledge
+graphs. To poison KGE models, we propose to exploit their inductive abilities
+which are captured through the relationship patterns like symmetry, inversion
+and composition in the knowledge graph. Specifically, to degrade the model's
+prediction confidence on target facts, we propose to improve the model's
+prediction confidence on a set of decoy facts. Thus, we craft adversarial
+additions that can improve the model's prediction confidence on decoy facts
+through different inference patterns. Our experiments demonstrate that the
+proposed poisoning attacks outperform state-of-art baselines on four KGE models
+for two publicly available datasets. We also find that the symmetry pattern
+based attacks generalize across all model-dataset combinations which indicates
+the sensitivity of KGE models to this pattern.",2021,257,51.4,,http://arxiv.org/abs/2111.06345v1,Low ROT
+38,Early stopping by correlating online indicators in neural networks,"In order to minimize the generalization error in neural networks, a novel
+technique to identify overfitting phenomena when training the learner is
+formally introduced. This enables support of a reliable and trustworthy early
+stopping condition, thus improving the predictive power of that type of
+modeling. Our proposal exploits the correlation over time in a collection of
+online indicators, namely characteristic functions for indicating if a set of
+hypotheses are met, associated with a range of independent stopping conditions
+built from a canary judgment to evaluate the presence of overfitting. That way,
+we provide a formal basis for decision making in terms of interrupting the
+learning process.
+  As opposed to previous approaches focused on a single criterion, we take
+advantage of subsidiarities between independent assessments, thus seeking both
+a wider operating range and greater diagnostic reliability. With a view to
+illustrating the effectiveness of the halting condition described, we choose to
+work in the sphere of natural language processing, an operational continuum
+increasingly based on machine learning. As a case study, we focus on parser
+generation, one of the most demanding and complex tasks in the domain. The
+selection of cross-validation as a canary function enables an actual comparison
+with the most representative early stopping conditions based on overfitting
+identification, pointing to a promising start toward an optimal bias and
+variance control.",2024,107,53.5,,http://arxiv.org/abs/2402.02513v1,Low ROT
+36,EvoPrompting: Language Models for Code-Level Neural Architecture Search,"Given the recent impressive accomplishments of language models (LMs) for code
+generation, we explore the use of LMs as adaptive mutation and crossover
+operators for an evolutionary neural architecture search (NAS) algorithm. While
+NAS still proves too difficult a task for LMs to succeed at solely through
+prompting, we find that the combination of evolutionary prompt engineering with
+soft prompt-tuning, a method we term EvoPrompting, consistently finds diverse
+and high performing models. We first demonstrate that EvoPrompting is effective
+on the computationally efficient MNIST-1D dataset, where EvoPrompting produces
+convolutional architecture variants that outperform both those designed by
+human experts and naive few-shot prompting in terms of accuracy and model size.
+We then apply our method to searching for graph neural networks on the CLRS
+Algorithmic Reasoning Benchmark, where EvoPrompting is able to design novel
+architectures that outperform current state-of-the-art models on 21 out of 30
+algorithmic reasoning tasks while maintaining similar model size. EvoPrompting
+is successful at designing accurate and efficient neural network architectures
+across a variety of machine learning tasks, while also being general enough for
+easy adaptation to other tasks beyond neural network design.",2023,180,60.0,,http://arxiv.org/abs/2302.14838v3,Low ROT
+28,A Joint Model for Question Answering and Question Generation,"We propose a generative machine comprehension model that learns jointly to
+ask and answer questions based on documents. The proposed model uses a
+sequence-to-sequence framework that encodes the document and generates a
+question (answer) given an answer (question). Significant improvement in model
+performance is observed empirically on the SQuAD corpus, confirming our
+hypothesis that the model benefits from jointly learning to perform both tasks.
+We believe the joint model's novelty offers a new perspective on machine
+comprehension beyond architectural engineering, and serves as a first step
+towards autonomous information seeking.",2017,561,62.333333333333336,,http://arxiv.org/abs/1706.01450v1,Low ROT

@@ -12,9 +12,16 @@ from sqlalchemy import (
     Float,
     TIMESTAMP,
     Date,
+<<<<<<< HEAD
     UniqueConstraint
 )
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker, Mapped, mapped_column
+=======
+    UniqueConstraint,
+    Column
+)
+from sqlalchemy.orm import declarative_base, relationship, sessionmaker
+>>>>>>> 133d86d (Done 1.2)
 
 # Define the base class for our declarative models
 Base = declarative_base()
@@ -22,6 +29,7 @@ Base = declarative_base()
 # Linking table for the many-to-many relationship between papers and authors
 class PaperAuthors(Base):
     __tablename__ = 'paper_authors'
+<<<<<<< HEAD
     paper_id: Mapped[int] = mapped_column(ForeignKey('papers.paper_id'), primary_key=True)
     author_id: Mapped[int] = mapped_column(ForeignKey('authors.author_id'), primary_key=True)
     author_order: Mapped[int] = mapped_column(Integer, nullable=False)
@@ -29,10 +37,20 @@ class PaperAuthors(Base):
     # Establish the bidirectional relationship
     paper: Mapped["Paper"] = relationship(back_populates="author_associations")
     author: Mapped["Author"] = relationship(back_populates="paper_associations")
+=======
+    paper_id = Column(ForeignKey('papers.paper_id'), primary_key=True)
+    author_id = Column(ForeignKey('authors.author_id'), primary_key=True)
+    author_order = Column(Integer, nullable=False)
+
+    # Establish the bidirectional relationship
+    paper = relationship("Paper", back_populates="author_associations")
+    author = relationship("Author", back_populates="paper_associations")
+>>>>>>> 133d86d (Done 1.2)
 
 class Paper(Base):
     __tablename__ = 'papers'
     
+<<<<<<< HEAD
     # Use Mapped and mapped_column for explicit typing
     paper_id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(Text)
@@ -48,6 +66,22 @@ class Paper(Base):
 
     # Relationship to the PaperAuthors association table
     author_associations: Mapped[List[PaperAuthors]] = relationship(back_populates="paper")
+=======
+    paper_id = Column(Integer, primary_key=True)
+    title = Column(Text)
+    abstract = Column(Text)
+    publication_year = Column(Integer, index=True)
+    doi = Column(String(255), unique=True, index=True)
+    source_url = Column(Text)
+    pdf_url = Column(Text)
+    source_db = Column(String(50))
+    citation_count = Column(Integer)
+    last_updated = Column(TIMESTAMP)
+    rot_score = Column(Float, index=True)
+
+    # Relationship to the PaperAuthors association table
+    author_associations = relationship("PaperAuthors", back_populates="paper")
+>>>>>>> 133d86d (Done 1.2)
     
     def __repr__(self):
         return f"<Paper(title='{self.title[:30]}...', doi='{self.doi}')>"
@@ -55,12 +89,21 @@ class Paper(Base):
 class Author(Base):
     __tablename__ = 'authors'
     
+<<<<<<< HEAD
     author_id: Mapped[int] = mapped_column(primary_key=True)
     full_name: Mapped[str] = mapped_column(String(255), index=True)
     affiliation: Mapped[Optional[str]] = mapped_column(Text)
 
     # Relationship to the PaperAuthors association table
     paper_associations: Mapped[List[PaperAuthors]] = relationship(back_populates="author")
+=======
+    author_id = Column(Integer, primary_key=True)
+    full_name = Column(String(255), index=True)
+    affiliation = Column(Text)
+
+    # Relationship to the PaperAuthors association table
+    paper_associations = relationship("PaperAuthors", back_populates="author")
+>>>>>>> 133d86d (Done 1.2)
     
     # Ensure that an author's full name is unique
     __table_args__ = (UniqueConstraint('full_name'),)
@@ -74,10 +117,17 @@ class CitationHistory(Base):
     """
     __tablename__ = 'citation_history'
     
+<<<<<<< HEAD
     history_id: Mapped[int] = mapped_column(primary_key=True)
     paper_id: Mapped[int] = mapped_column(ForeignKey('papers.paper_id'))
     check_date: Mapped[datetime.date] = mapped_column(Date)
     citation_count: Mapped[int] = mapped_column(Integer)
+=======
+    history_id = Column(Integer, primary_key=True)
+    paper_id = Column(ForeignKey('papers.paper_id'))
+    check_date = Column(Date)
+    citation_count = Column(Integer)
+>>>>>>> 133d86d (Done 1.2)
     
     def __repr__(self):
         return f"<CitationHistory(paper_id={self.paper_id}, date='{self.check_date}', count={self.citation_count})>"
