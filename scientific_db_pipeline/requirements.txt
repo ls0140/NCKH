@@ -1,0 +1,19 @@
+# For database connection and ORM
+SQLAlchemy==2.0.27
+psycopg2-binary==2.9.9
+
+# For communicating with the arXiv API
+arxiv==2.1.0
+
+# For scheduling the pipeline to run automatically
+APScheduler==3.10.4
+
+# For making HTTP requests (good practice to include)
+requests==2.31.0
+
+#FUCK
+feedparser==6.0.10
+
+# For data analysis and CSV export (using pre-compiled wheels)
+pandas==2.2.0
+numpy==1.26.4
