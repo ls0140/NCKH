@@ -14,23 +14,11 @@ Session = sessionmaker(bind=engine)
 
 def add_or_update_paper(paper_data: dict):
     """
-<<<<<<< HEAD
-    Adds a new paper or updates an existing one based on its DOI.
-=======
     Adds a new paper or updates an existing one based on its source URL.
->>>>>>> 133d86d (Done 1.2)
     This function implements the "upsert" logic. 
     """
     session = Session()
     try:
-<<<<<<< HEAD
-        # Check if a paper with this DOI already exists 
-        existing_paper = session.query(Paper).filter(Paper.doi == paper_data.get('doi')).first()
-
-        if existing_paper:
-            # Paper exists, update its information 
-            logging.info(f"Updating existing paper with DOI: {paper_data['doi']}")
-=======
         # Check if a paper with this source URL already exists 
         # Use source_url instead of DOI since arXiv papers don't have DOIs
         existing_paper = session.query(Paper).filter(Paper.source_url == paper_data.get('source_url')).first()
@@ -38,7 +26,6 @@ def add_or_update_paper(paper_data: dict):
         if existing_paper:
             # Paper exists, update its information 
             logging.info(f"Updating existing paper with URL: {paper_data['source_url']}")
->>>>>>> 133d86d (Done 1.2)
             existing_paper.citation_count = paper_data.get('citation_count')
             existing_paper.last_updated = datetime.datetime.utcnow()
             paper_to_update = existing_paper

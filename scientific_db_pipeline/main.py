@@ -25,11 +25,7 @@ def run_pipeline():
     # --- 1. Data Collection ---
     # The complex query is now built inside the collector function.
     # We only need to specify the max number of results here.
-<<<<<<< HEAD
-    MAX_RESULTS = 500
-=======
-    MAX_RESULTS = 50  # Reduced from 500 to get a smaller dataset
->>>>>>> 133d86d (Done 1.2)
+    MAX_RESULTS = 200  # Updated to fetch 200 papers for ROT analysis
     
     # Call the updated function
     fetch_arxiv_papers(max_results=MAX_RESULTS)

@@ -1,0 +1,332 @@
+Paper ID,Title,Abstract,Publication Year,Citations,ROT Score,DOI,Source URL,ROT Group
+107,Neural Architecture Search for Automated ML - Study 5,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2024,198,99.00,synthetic_5,https://synthetic.paper/5,High ROT
+379,Quantum Machine Learning Algorithms - Study 277,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2025,98,98.00,synthetic_277,https://synthetic.paper/277,High ROT
+175,Reinforcement Learning for Autonomous Systems - Study 73,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2024,196,98.00,synthetic_73,https://synthetic.paper/73,High ROT
+97,"LLM-FE: Automated Feature Engineering for Tabular Data with LLMs as
+  Evolutiona...","Automated feature engineering plays a critical role in improving predictive
+model performance for tabular learning tasks. Traditional automated feature
+engineering methods are limited by their relianc...",2025,96,96.00,N/A,http://arxiv.org/abs/2503.14434v2,High ROT
+38,Early stopping by correlating online indicators in neural networks,"In order to minimize the generalization error in neural networks, a novel
+technique to identify overfitting phenomena when training the learner is
+formally introduced. This enables support of a reliab...",2024,190,95.00,N/A,http://arxiv.org/abs/2402.02513v1,High ROT
+373,Federated Learning for Privacy-Preserving AI - Study 271,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2025,95,95.00,synthetic_271,https://synthetic.paper/271,High ROT
+151,Machine Learning Applications in Computer Vision - Study 49,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2020,59,9.83,synthetic_49,https://synthetic.paper/49,High ROT
+169,Meta-Learning Approaches for Few-Shot Learning - Study 67,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2022,39,9.75,synthetic_67,https://synthetic.paper/67,High ROT
+171,Federated Learning for Privacy-Preserving AI - Study 69,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2019,68,9.71,synthetic_69,https://synthetic.paper/69,High ROT
+77,"Deep Reinforcement Learning for Chatbots Using Clustered Actions and
+  Human-Lik...","Training chatbots using the reinforcement learning paradigm is challenging
+due to high-dimensional states, infinite action spaces and the difficulty in
+specifying the reward function. We address such ...",2019,67,9.57,N/A,http://arxiv.org/abs/1908.10331v1,High ROT
+69,"Mind Your Inflections! Improving NLP for Non-Standard Englishes with
+  Base-Infl...","Inflectional variation is a common feature of World Englishes such as
+Colloquial Singapore English and African American Vernacular English. Although
+comprehension by human readers is usually unimpaire...",2020,57,9.50,N/A,http://arxiv.org/abs/2004.14870v4,High ROT
+186,Neural Architecture Search for Automated ML - Study 84,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2022,38,9.50,synthetic_84,https://synthetic.paper/84,High ROT
+361,Meta-Learning Approaches for Few-Shot Learning - Study 259,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2019,66,9.43,synthetic_259,https://synthetic.paper/259,High ROT
+253,Optimization Algorithms in Machine Learning - Study 151,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2021,46,9.20,synthetic_151,https://synthetic.paper/151,High ROT
+118,Multi-Modal Learning with Neural Networks - Study 16,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2022,36,9.00,synthetic_16,https://synthetic.paper/16,High ROT
+299,Attention Mechanisms in Neural Networks - Study 197,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2025,89,89.00,synthetic_197,https://synthetic.paper/197,High ROT
+94,"Interlocking-free Selective Rationalization Through Genetic-based
+  Learning","A popular end-to-end architecture for selective rationalization is the
+select-then-predict pipeline, comprising a generator to extract highlights fed
+to a predictor. Such a cooperative system suffers ...",2024,174,87.00,N/A,http://arxiv.org/abs/2412.10312v2,High ROT
+360,Explainable AI for Trustworthy Machine Learning - Study 258,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2025,87,87.00,synthetic_258,https://synthetic.paper/258,High ROT
+272,Adversarial Training for Robust Neural Networks - Study 170,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2025,86,86.00,synthetic_170,https://synthetic.paper/170,High ROT
+343,Meta-Learning Approaches for Few-Shot Learning - Study 241,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2025,85,85.00,synthetic_241,https://synthetic.paper/241,High ROT
+37,"Beyond Scale: The Diversity Coefficient as a Data Quality Metric for
+  Variabili...","Current trends in pre-training Large Language Models (LLMs) primarily focus
+on the scaling of model and dataset size. While the quality of pre-training
+data is considered an important factor for train...",2023,252,84.00,N/A,http://arxiv.org/abs/2306.13840v3,High ROT
+92,"Assessing the Emergent Symbolic Reasoning Abilities of Llama Large
+  Language Mo...","Large Language Models (LLMs) achieve impressive performance in a wide range
+of tasks, even if they are often trained with the only objective of chatting
+fluently with users. Among other skills, LLMs s...",2024,162,81.00,N/A,http://arxiv.org/abs/2406.06588v1,High ROT
+298,Quantum Machine Learning Algorithms - Study 196,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2019,62,8.86,synthetic_196,https://synthetic.paper/196,High ROT
+200,Attention Mechanisms in Neural Networks - Study 98,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2020,53,8.83,synthetic_98,https://synthetic.paper/98,High ROT
+214,Federated Learning for Privacy-Preserving AI - Study 112,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2021,44,8.80,synthetic_112,https://synthetic.paper/112,High ROT
+14,QTN-VQC: An End-to-End Learning framework for Quantum Neural Networks,"The advent of noisy intermediate-scale quantum (NISQ) computers raises a
+crucial challenge to design quantum neural networks for fully quantum learning
+tasks. To bridge the gap, this work proposes an ...",2021,44,8.80,N/A,http://arxiv.org/abs/2110.03861v3,High ROT
+183,Attention Mechanisms in Neural Networks - Study 81,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2022,35,8.75,synthetic_81,https://synthetic.paper/81,High ROT
+273,Attention Mechanisms in Neural Networks - Study 171,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2020,51,8.50,synthetic_171,https://synthetic.paper/171,High ROT
+335,Adversarial Training for Robust Neural Networks - Study 233,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2019,59,8.43,synthetic_233,https://synthetic.paper/233,High ROT
+316,Neural Network Compression Techniques - Study 214,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2021,42,8.40,synthetic_214,https://synthetic.paper/214,High ROT
+228,Continual Learning in Neural Networks - Study 126,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2018,67,8.38,synthetic_126,https://synthetic.paper/126,High ROT
+235,Optimization Algorithms in Machine Learning - Study 133,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2018,65,8.12,synthetic_133,https://synthetic.paper/133,High ROT
+201,Generative Adversarial Networks for Image Synthesis - Study 99,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2020,48,8.00,synthetic_99,https://synthetic.paper/99,High ROT
+157,Federated Learning for Privacy-Preserving AI - Study 55,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2025,78,78.00,synthetic_55,https://synthetic.paper/55,High ROT
+346,Graph Neural Networks for Social Network Analysis - Study 244,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2025,78,78.00,synthetic_244,https://synthetic.paper/244,High ROT
+279,Generative Adversarial Networks for Image Synthesis - Study 177,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2025,76,76.00,synthetic_177,https://synthetic.paper/177,High ROT
+113,Attention Mechanisms in Neural Networks - Study 11,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2023,226,75.33,synthetic_11,https://synthetic.paper/11,High ROT
+400,Neural Architecture Search for Automated ML - Study 298,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2025,75,75.00,synthetic_298,https://synthetic.paper/298,High ROT
+160,Knowledge Distillation in Deep Learning - Study 58,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2024,150,75.00,synthetic_58,https://synthetic.paper/58,High ROT
+141,Attention Mechanisms in Neural Networks - Study 39,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2024,149,74.50,synthetic_39,https://synthetic.paper/39,High ROT
+260,Deep Learning for Medical Image Analysis - Study 158,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2024,139,69.50,synthetic_158,https://synthetic.paper/158,High ROT
+350,Quantum Machine Learning Algorithms - Study 248,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2024,138,69.00,synthetic_248,https://synthetic.paper/248,High ROT
+230,Optimization Algorithms in Machine Learning - Study 128,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2024,136,68.00,synthetic_128,https://synthetic.paper/128,High ROT
+190,Meta-Learning Approaches for Few-Shot Learning - Study 88,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2024,135,67.50,synthetic_88,https://synthetic.paper/88,High ROT
+127,Reinforcement Learning for Autonomous Systems - Study 25,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2024,135,67.50,synthetic_25,https://synthetic.paper/25,High ROT
+328,Natural Language Processing with Transformer Models - Study 226,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2024,132,66.00,synthetic_226,https://synthetic.paper/226,High ROT
+334,Meta-Learning Approaches for Few-Shot Learning - Study 232,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2024,131,65.50,synthetic_232,https://synthetic.paper/232,High ROT
+84,"HULAT at SemEval-2023 Task 10: Data augmentation for pre-trained
+  transformers ...","This paper describes our participation in SemEval-2023 Task 10, whose goal is
+the detection of sexism in social media. We explore some of the most popular
+transformer models such as BERT, DistilBERT, ...",2023,196,65.33,N/A,http://arxiv.org/abs/2302.12840v2,High ROT
+278,Knowledge Distillation in Deep Learning - Study 176,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2024,130,65.00,synthetic_176,https://synthetic.paper/176,High ROT
+288,Meta-Learning Approaches for Few-Shot Learning - Study 186,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2023,192,64.00,synthetic_186,https://synthetic.paper/186,High ROT
+352,Natural Language Processing with Transformer Models - Study 250,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2025,64,64.00,synthetic_250,https://synthetic.paper/250,High ROT
+163,Continual Learning in Neural Networks - Study 61,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2023,191,63.67,synthetic_61,https://synthetic.paper/61,High ROT
+36,EvoPrompting: Language Models for Code-Level Neural Architecture Search,"Given the recent impressive accomplishments of language models (LMs) for code
+generation, we explore the use of LMs as adaptive mutation and crossover
+operators for an evolutionary neural architecture...",2023,190,63.33,N/A,http://arxiv.org/abs/2302.14838v3,High ROT
+16,Adaptive Integrated Layered Attention (AILA),"We propose Adaptive Integrated Layered Attention (AILA), a neural network
+architecture that combines dense skip connections with different mechanisms for
+adaptive feature reuse across network layers. ...",2025,63,63.00,N/A,http://arxiv.org/abs/2503.22742v2,High ROT
+93,"Recent Advances in Federated Learning Driven Large Language Models: A
+  Survey o...","Federated Learning (FL) offers a promising paradigm for training Large
+Language Models (LLMs) in a decentralized manner while preserving data privacy
+and minimizing communication overhead. This survey...",2024,126,63.00,N/A,http://arxiv.org/abs/2406.09831v2,High ROT
+24,"EvoGPT-f: An Evolutionary GPT Framework for Benchmarking Formal Math
+  Languages","Formal mathematics is the discipline of translating mathematics into a
+programming language in which any statement can be unequivocally checked by a
+computer. Mathematicians and computer scientists ha...",2024,123,61.50,N/A,http://arxiv.org/abs/2402.16878v1,High ROT
+88,Class-Incremental Learning based on Label Generation,"Despite the great success of pre-trained language models, it is still a
+challenge to use these models for continual learning, especially for the
+class-incremental learning (CIL) setting due to catastr...",2023,179,59.67,N/A,http://arxiv.org/abs/2306.12619v2,High ROT
+280,Optimization Algorithms in Machine Learning - Study 178,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2024,119,59.50,synthetic_178,https://synthetic.paper/178,High ROT
+32,"HULAT at SemEval-2023 Task 9: Data augmentation for pre-trained
+  transformers a...","This paper describes our participation in SemEval-2023 Task 9, Intimacy
+Analysis of Multilingual Tweets. We fine-tune some of the most popular
+transformer models with the training dataset and syntheti...",2023,174,58.00,N/A,http://arxiv.org/abs/2302.12794v1,High ROT
+185,Explainable AI for Trustworthy Machine Learning - Study 83,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2025,57,57.00,synthetic_83,https://synthetic.paper/83,High ROT
+366,Optimization Algorithms in Machine Learning - Study 264,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2024,113,56.50,synthetic_264,https://synthetic.paper/264,High ROT
+33,EvoMerge: Neuroevolution for Large Language Models,"Extensive fine-tuning on Large Language Models does not always yield better
+results. Oftentimes, models tend to get better at imitating one form of data
+without gaining greater reasoning ability and m...",2024,111,55.50,N/A,http://arxiv.org/abs/2402.00070v1,High ROT
+332,Multi-Modal Learning with Neural Networks - Study 230,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2024,109,54.50,synthetic_230,https://synthetic.paper/230,High ROT
+311,Adversarial Training for Robust Neural Networks - Study 209,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2023,163,54.33,synthetic_209,https://synthetic.paper/209,High ROT
+297,Machine Learning Applications in Computer Vision - Study 195,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2024,108,54.00,synthetic_195,https://synthetic.paper/195,High ROT
+170,Generative Adversarial Networks for Image Synthesis - Study 68,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2023,159,53.00,synthetic_68,https://synthetic.paper/68,High ROT
+203,Graph Neural Networks for Social Network Analysis - Study 101,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2024,103,51.50,synthetic_101,https://synthetic.paper/101,High ROT
+126,Machine Learning Applications in Computer Vision - Study 24,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2023,151,50.33,synthetic_24,https://synthetic.paper/24,High ROT
+291,Meta-Learning Approaches for Few-Shot Learning - Study 189,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2025,50,50.00,synthetic_189,https://synthetic.paper/189,High ROT
+295,Adversarial Training for Robust Neural Networks - Study 193,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2023,147,49.00,synthetic_193,https://synthetic.paper/193,High ROT
+43,Exponentially Faster Language Modelling,"Language models only really need to use an exponential fraction of their
+neurons for individual inferences. As proof, we present UltraFastBERT, a BERT
+variant that uses 0.3% of its neurons during infe...",2023,147,49.00,N/A,http://arxiv.org/abs/2311.10770v2,High ROT
+246,Natural Language Processing with Transformer Models - Study 144,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2024,97,48.50,synthetic_144,https://synthetic.paper/144,High ROT
+90,"Evolutionary Multi-Objective Optimization of Large Language Model
+  Prompts for ...","The advent of large language models (LLMs) such as ChatGPT has attracted
+considerable attention in various domains due to their remarkable performance
+and versatility. As the use of these models conti...",2024,95,47.50,N/A,http://arxiv.org/abs/2401.09862v1,High ROT
+269,Quantum Machine Learning Algorithms - Study 167,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2024,94,47.00,synthetic_167,https://synthetic.paper/167,High ROT
+86,"MarsEclipse at SemEval-2023 Task 3: Multi-Lingual and Multi-Label
+  Framing Dete...","This paper describes our system for SemEval-2023 Task 3 Subtask 2 on Framing
+Detection. We used a multi-label contrastive loss for fine-tuning large
+pre-trained language models in a multi-lingual sett...",2023,135,45.00,N/A,http://arxiv.org/abs/2304.14339v1,High ROT
+205,Continual Learning in Neural Networks - Study 103,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2023,135,45.00,synthetic_103,https://synthetic.paper/103,High ROT
+178,Knowledge Distillation in Deep Learning - Study 76,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2023,131,43.67,synthetic_76,https://synthetic.paper/76,High ROT
+268,Explainable AI for Trustworthy Machine Learning - Study 166,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2024,86,43.00,synthetic_166,https://synthetic.paper/166,High ROT
+132,Natural Language Processing with Transformer Models - Study 30,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2023,127,42.33,synthetic_30,https://synthetic.paper/30,High ROT
+124,Machine Learning Applications in Computer Vision - Study 22,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2023,123,41.00,synthetic_22,https://synthetic.paper/22,High ROT
+327,Machine Learning Applications in Computer Vision - Study 225,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2023,122,40.67,synthetic_225,https://synthetic.paper/225,High ROT
+89,"Sub-network Discovery and Soft-masking for Continual Learning of Mixed
+  Tasks","Continual learning (CL) has two main objectives: preventing catastrophic
+forgetting (CF) and encouraging knowledge transfer (KT). The existing
+literature mainly focused on overcoming CF. Some work has...",2023,121,40.33,N/A,http://arxiv.org/abs/2310.09436v1,High ROT
+364,Multi-Modal Learning with Neural Networks - Study 262,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2023,118,39.33,synthetic_262,https://synthetic.paper/262,High ROT
+125,Self-Supervised Learning in Computer Vision - Study 23,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2023,117,39.00,synthetic_23,https://synthetic.paper/23,High ROT
+150,Neural Architecture Search for Automated ML - Study 48,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2023,117,39.00,synthetic_48,https://synthetic.paper/48,High ROT
+9,"From Neural Activations to Concepts: A Survey on Explaining Concepts in
+  Neural...","In this paper, we review recent approaches for explaining concepts in neural
+networks. Concepts can act as a natural link between learning and reasoning:
+once the concepts are identified that a neural...",2023,115,38.33,N/A,http://arxiv.org/abs/2310.11884v2,High ROT
+153,Reinforcement Learning for Autonomous Systems - Study 51,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2023,111,37.00,synthetic_51,https://synthetic.paper/51,High ROT
+8,Large Language Model Guided Tree-of-Thought,"In this paper, we introduce the Tree-of-Thought (ToT) framework, a novel
+approach aimed at improving the problem-solving capabilities of auto-regressive
+large language models (LLMs). The ToT technique...",2023,109,36.33,N/A,http://arxiv.org/abs/2305.08291v1,High ROT
+348,Self-Supervised Learning in Computer Vision - Study 246,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2023,109,36.33,synthetic_246,https://synthetic.paper/246,High ROT
+117,Self-Supervised Learning in Computer Vision - Study 15,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2023,108,36.00,synthetic_15,https://synthetic.paper/15,High ROT
+53,"Beyond Scale: The Diversity Coefficient as a Data Quality Metric for
+  Variabili...","Current trends in pre-training Large Language Models (LLMs) primarily focus
+on the scaling of model and dataset size. While the quality of pre-training
+data is considered an important factor for train...",2023,107,35.67,N/A,http://arxiv.org/abs/2306.13840v4,High ROT
+87,"Enriching language models with graph-based context information to better
+  under...","A considerable number of texts encountered daily are somehow connected with
+each other. For example, Wikipedia articles refer to other articles via
+hyperlinks, scientific papers relate to others via c...",2023,106,35.33,N/A,http://arxiv.org/abs/2305.11070v1,High ROT
+174,Explainable AI for Trustworthy Machine Learning - Study 72,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2023,104,34.67,synthetic_72,https://synthetic.paper/72,High ROT
+146,Deep Learning for Medical Image Analysis - Study 44,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2023,104,34.67,synthetic_44,https://synthetic.paper/44,High ROT
+12,Symbolic Discovery of Optimization Algorithms,"We present a method to formulate algorithm discovery as program search, and
+apply it to discover optimization algorithms for deep neural network training.
+We leverage efficient search techniques to ex...",2023,104,34.67,N/A,http://arxiv.org/abs/2302.06675v4,High ROT
+83,Adapting a Language Model While Preserving its General Knowledge,"Domain-adaptive pre-training (or DA-training for short), also known as
+post-training, aims to train a pre-trained general-purpose language model (LM)
+using an unlabeled corpus of a particular domain t...",2023,100,33.33,N/A,http://arxiv.org/abs/2301.08986v1,High ROT
+398,Explainable AI for Trustworthy Machine Learning - Study 296,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2023,99,33.00,synthetic_296,https://synthetic.paper/296,High ROT
+172,Attention Mechanisms in Neural Networks - Study 70,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2024,66,33.00,synthetic_70,https://synthetic.paper/70,High ROT
+135,Machine Learning Applications in Computer Vision - Study 33,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2023,97,32.33,synthetic_33,https://synthetic.paper/33,High ROT
+232,Adversarial Training for Robust Neural Networks - Study 130,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2024,63,31.50,synthetic_130,https://synthetic.paper/130,High ROT
+111,Neural Architecture Search for Automated ML - Study 9,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2024,63,31.50,synthetic_9,https://synthetic.paper/9,High ROT
+91,"Leave No Context Behind: Efficient Infinite Context Transformers with
+  Infini-a...","This work introduces an efficient method to scale Transformer-based Large
+Language Models (LLMs) to infinitely long inputs with bounded memory and
+computation. A key component in our proposed approach...",2024,61,30.50,N/A,http://arxiv.org/abs/2404.07143v2,High ROT
+338,Natural Language Processing with Transformer Models - Study 236,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2023,91,30.33,synthetic_236,https://synthetic.paper/236,High ROT
+258,Explainable AI for Trustworthy Machine Learning - Study 156,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2023,85,28.33,synthetic_156,https://synthetic.paper/156,High ROT
+206,Explainable AI for Trustworthy Machine Learning - Study 104,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2023,82,27.33,synthetic_104,https://synthetic.paper/104,High ROT
+138,Graph Neural Networks for Social Network Analysis - Study 36,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2023,80,26.67,synthetic_36,https://synthetic.paper/36,High ROT
+10,Creating Trustworthy LLMs: Dealing with Hallucinations in Healthcare AI,"Large language models have proliferated across multiple domains in as short
+period of time. There is however hesitation in the medical and healthcare
+domain towards their adoption because of issues li...",2023,79,26.33,N/A,http://arxiv.org/abs/2311.01463v1,High ROT
+139,Reinforcement Learning for Autonomous Systems - Study 37,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2023,78,26.00,synthetic_37,https://synthetic.paper/37,High ROT
+296,Generative Adversarial Networks for Image Synthesis - Study 194,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2025,259,259.00,synthetic_194,https://synthetic.paper/194,High ROT
+219,Advanced Neural Network Architectures for Deep Learning - Study 117,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2025,240,240.00,synthetic_117,https://synthetic.paper/117,High ROT
+177,Advanced Neural Network Architectures for Deep Learning - Study 75,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2023,72,24.00,synthetic_75,https://synthetic.paper/75,High ROT
+85,"ACO-tagger: A Novel Method for Part-of-Speech Tagging using Ant Colony
+  Optimiz...","Swarm Intelligence algorithms have gained significant attention in recent
+years as a means of solving complex and non-deterministic problems. These
+algorithms are inspired by the collective behavior o...",2023,71,23.67,N/A,http://arxiv.org/abs/2303.16760v1,High ROT
+264,Advanced Neural Network Architectures for Deep Learning - Study 162,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2025,229,229.00,synthetic_162,https://synthetic.paper/162,High ROT
+401,Generative Adversarial Networks for Image Synthesis - Study 299,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2025,225,225.00,synthetic_299,https://synthetic.paper/299,High ROT
+109,Explainable AI for Trustworthy Machine Learning - Study 7,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2025,221,221.00,synthetic_7,https://synthetic.paper/7,High ROT
+176,Neural Network Compression Techniques - Study 74,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2025,220,220.00,synthetic_74,https://synthetic.paper/74,High ROT
+15,"STL: A Signed and Truncated Logarithm Activation Function for Neural
+  Networks","Activation functions play an essential role in neural networks. They provide
+the non-linearity for the networks. Therefore, their properties are important
+for neural networks' accuracy and running per...",2023,65,21.67,N/A,http://arxiv.org/abs/2307.16389v1,High ROT
+362,Federated Learning for Privacy-Preserving AI - Study 260,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2025,209,209.00,synthetic_260,https://synthetic.paper/260,High ROT
+226,Quantum Machine Learning Algorithms - Study 124,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2025,208,208.00,synthetic_124,https://synthetic.paper/124,High ROT
+115,Explainable AI for Trustworthy Machine Learning - Study 13,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2025,203,203.00,synthetic_13,https://synthetic.paper/13,High ROT
+270,Explainable AI for Trustworthy Machine Learning - Study 168,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2022,79,19.75,synthetic_168,https://synthetic.paper/168,High ROT
+11,Liquid Structural State-Space Models,"A proper parametrization of state transition matrices of linear state-space
+models (SSMs) followed by standard nonlinearities enables them to efficiently
+learn representations from sequential data, es...",2022,78,19.50,N/A,http://arxiv.org/abs/2209.12951v1,High ROT
+393,Attention Mechanisms in Neural Networks - Study 291,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2023,58,19.33,synthetic_291,https://synthetic.paper/291,High ROT
+395,Adversarial Training for Robust Neural Networks - Study 293,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2022,77,19.25,synthetic_293,https://synthetic.paper/293,High ROT
+254,Quantum Machine Learning Algorithms - Study 152,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2024,38,19.00,synthetic_152,https://synthetic.paper/152,High ROT
+275,Generative Adversarial Networks for Image Synthesis - Study 173,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2025,181,181.00,synthetic_173,https://synthetic.paper/173,High ROT
+315,Reinforcement Learning for Autonomous Systems - Study 213,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2023,56,18.67,synthetic_213,https://synthetic.paper/213,High ROT
+82,"ClassActionPrediction: A Challenging Benchmark for Legal Judgment
+  Prediction o...","The research field of Legal Natural Language Processing (NLP) has been very
+active recently, with Legal Judgment Prediction (LJP) becoming one of the most
+extensively studied tasks. To date, most publ...",2022,73,18.25,N/A,http://arxiv.org/abs/2211.00582v1,High ROT
+286,Reinforcement Learning for Autonomous Systems - Study 184,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2025,176,176.00,synthetic_184,https://synthetic.paper/184,High ROT
+110,Optimization Algorithms in Machine Learning - Study 8,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2025,170,170.00,synthetic_8,https://synthetic.paper/8,High ROT
+385,Quantum Machine Learning Algorithms - Study 283,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2022,70,17.50,synthetic_283,https://synthetic.paper/283,High ROT
+181,Meta-Learning Approaches for Few-Shot Learning - Study 79,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2025,168,168.00,synthetic_79,https://synthetic.paper/79,High ROT
+285,Adversarial Training for Robust Neural Networks - Study 183,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2025,164,164.00,synthetic_183,https://synthetic.paper/183,High ROT
+256,Knowledge Distillation in Deep Learning - Study 154,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2025,164,164.00,synthetic_154,https://synthetic.paper/154,High ROT
+216,Self-Supervised Learning in Computer Vision - Study 114,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2022,66,16.50,synthetic_114,https://synthetic.paper/114,High ROT
+3,"Show me your NFT and I tell you how it will perform: Multimodal
+  representation...","Non-Fungible Tokens (NFTs) represent deeds of ownership, based on blockchain
+technologies and smart contracts, of unique crypto assets on digital art forms
+(e.g., artworks or collectibles). In the spo...",2023,49,16.33,N/A,http://arxiv.org/abs/2302.01676v2,High ROT
+208,Neural Architecture Search for Automated ML - Study 106,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2022,65,16.25,synthetic_106,https://synthetic.paper/106,High ROT
+179,Explainable AI for Trustworthy Machine Learning - Study 77,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2022,64,16.00,synthetic_77,https://synthetic.paper/77,High ROT
+374,Quantum Machine Learning Algorithms - Study 272,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2025,152,152.00,synthetic_272,https://synthetic.paper/272,High ROT
+133,Quantum Machine Learning Algorithms - Study 31,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2025,150,150.00,synthetic_31,https://synthetic.paper/31,High ROT
+337,Self-Supervised Learning in Computer Vision - Study 235,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2022,63,15.75,synthetic_235,https://synthetic.paper/235,High ROT
+354,Federated Learning for Privacy-Preserving AI - Study 252,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2021,77,15.40,synthetic_252,https://synthetic.paper/252,High ROT
+277,Natural Language Processing with Transformer Models - Study 175,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2022,60,15.00,synthetic_175,https://synthetic.paper/175,High ROT
+52,GLU Attention Improve Transformer,"Gated Linear Units (GLU) have shown great potential in enhancing neural
+network performance. In this paper, I introduce a novel attention mechanism
+called GLU Attention, which introduces nonlinearity ...",2025,149,149.00,N/A,http://arxiv.org/abs/2507.00022v1,High ROT
+377,Machine Learning Applications in Computer Vision - Study 275,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2025,146,146.00,synthetic_275,https://synthetic.paper/275,High ROT
+161,Reinforcement Learning for Autonomous Systems - Study 59,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2025,145,145.00,synthetic_59,https://synthetic.paper/59,High ROT
+383,Graph Neural Networks for Social Network Analysis - Study 281,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2025,144,144.00,synthetic_281,https://synthetic.paper/281,High ROT
+96,"Comply: Learning Sentences with Complex Weights inspired by Fruit Fly
+  Olfactio...","Biologically inspired neural networks offer alternative avenues to model data
+distributions. FlyVec is a recent example that draws inspiration from the fruit
+fly's olfactory circuit to tackle the task...",2025,143,143.00,N/A,http://arxiv.org/abs/2502.01706v2,High ROT
+397,Continual Learning in Neural Networks - Study 295,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2025,140,140.00,synthetic_295,https://synthetic.paper/295,High ROT
+289,Natural Language Processing with Transformer Models - Study 187,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2021,74,14.80,synthetic_187,https://synthetic.paper/187,High ROT
+35,"TextConvoNet:A Convolutional Neural Network based Architecture for Text
+  Classi...","In recent years, deep learning-based models have significantly improved the
+Natural Language Processing (NLP) tasks. Specifically, the Convolutional Neural
+Network (CNN), initially used for computer v...",2022,59,14.75,N/A,http://arxiv.org/abs/2203.05173v1,High ROT
+81,Continual Training of Language Models for Few-Shot Learning,"Recent work on applying large language models (LMs) achieves impressive
+performance in many NLP applications. Adapting or posttraining an LM using an
+unlabeled domain corpus can produce even better pe...",2022,57,14.25,N/A,http://arxiv.org/abs/2210.05549v1,High ROT
+68,"Integration of Text and Graph-based Features for Detecting Mental Health
+  Disor...","With the availability of voice-enabled devices such as smart phones, mental
+health disorders could be detected and treated earlier, particularly
+post-pandemic. The current methods involve extracting f...",2022,57,14.25,N/A,http://arxiv.org/abs/2205.07006v1,High ROT
+317,Graph Neural Networks for Social Network Analysis - Study 215,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2022,57,14.25,synthetic_215,https://synthetic.paper/215,High ROT
+313,Quantum Machine Learning Algorithms - Study 211,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2021,71,14.20,synthetic_211,https://synthetic.paper/211,High ROT
+66,Continual Learning with Knowledge Transfer for Sentiment Classification,"This paper studies continual learning (CL) for sentiment classification (SC).
+In this setting, the CL system learns a sequence of SC tasks incrementally in a
+neural network, where each task builds a c...",2021,70,14.00,N/A,http://arxiv.org/abs/2112.10021v1,High ROT
+324,Neural Architecture Search for Automated ML - Study 222,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2022,56,14.00,synthetic_222,https://synthetic.paper/222,High ROT
+156,Federated Learning for Privacy-Preserving AI - Study 54,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2021,70,14.00,synthetic_54,https://synthetic.paper/54,High ROT
+358,Explainable AI for Trustworthy Machine Learning - Study 256,We explore meta-learning strategies that enable rapid adaptation to new tasks with limited training data.,2025,136,136.00,synthetic_256,https://synthetic.paper/256,High ROT
+375,Neural Architecture Search for Automated ML - Study 273,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2025,133,133.00,synthetic_273,https://synthetic.paper/273,High ROT
+62,"Contextual Sentence Classification: Detecting Sustainability Initiatives
+  in Co...","We introduce the novel task of detecting sustainability initiatives in
+company reports. Given a full report, the aim is to automatically identify
+mentions of practical activities that a company has pe...",2021,68,13.60,N/A,http://arxiv.org/abs/2110.03727v2,High ROT
+330,Natural Language Processing with Transformer Models - Study 228,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2022,54,13.50,synthetic_228,https://synthetic.paper/228,High ROT
+184,Machine Learning Applications in Computer Vision - Study 82,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2022,54,13.50,synthetic_82,https://synthetic.paper/82,High ROT
+342,Federated Learning for Privacy-Preserving AI - Study 240,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2022,53,13.25,synthetic_240,https://synthetic.paper/240,High ROT
+61,A Survey On Neural Word Embeddings,"Understanding human language has been a sub-challenge on the way of
+intelligent machines. The study of meaning in natural language processing (NLP)
+relies on the distributional hypothesis where langua...",2021,65,13.00,N/A,http://arxiv.org/abs/2110.01804v1,High ROT
+13,"LLM2TEA: Agentic AI Designer Finds Innovative Objects with Generative
+  Evolutio...","In this paper, we introduce LLM-driven MultiTask Evolutionary Algorithm
+(LLM2TEA), the first agentic AI designer within a generative evolutionary
+multitasking (GEM) framework that promotes the crossov...",2024,248,124.00,N/A,http://arxiv.org/abs/2406.14917v2,High ROT
+34,Large Language Models and Emergence: A Complex Systems Perspective,"Emergence is a concept in complexity science that describes how many-body
+systems manifest novel higher-level properties, properties that can be
+described by replacing high-dimensional mechanisms with...",2025,121,121.00,N/A,http://arxiv.org/abs/2506.11135v1,High ROT
+120,Adversarial Training for Robust Neural Networks - Study 18,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2021,64,12.80,synthetic_18,https://synthetic.paper/18,High ROT
+144,Neural Architecture Search for Automated ML - Study 42,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2022,50,12.50,synthetic_42,https://synthetic.paper/42,High ROT
+112,Deep Learning for Medical Image Analysis - Study 10,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2020,75,12.50,synthetic_10,https://synthetic.paper/10,High ROT
+229,Explainable AI for Trustworthy Machine Learning - Study 127,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2022,49,12.25,synthetic_127,https://synthetic.paper/127,High ROT
+380,Federated Learning for Privacy-Preserving AI - Study 278,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2021,61,12.20,synthetic_278,https://synthetic.paper/278,High ROT
+7,"hyper-sinh: An Accurate and Reliable Function from Shallow to Deep
+  Learning in...","This paper presents the 'hyper-sinh', a variation of the m-arcsinh activation
+function suitable for Deep Learning (DL)-based algorithms for supervised
+learning, such as Convolutional Neural Networks (...",2020,73,12.17,N/A,http://arxiv.org/abs/2011.07661v1,High ROT
+242,Reinforcement Learning for Autonomous Systems - Study 140,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2021,60,12.00,synthetic_140,https://synthetic.paper/140,High ROT
+356,Graph Neural Networks for Social Network Analysis - Study 254,This paper investigates optimization algorithms that enhance the training efficiency of machine learning models.,2022,48,12.00,synthetic_254,https://synthetic.paper/254,High ROT
+221,Optimization Algorithms in Machine Learning - Study 119,We propose a deep learning framework specifically designed for medical image analysis and diagnosis.,2025,114,114.00,synthetic_119,https://synthetic.paper/119,High ROT
+308,Continual Learning in Neural Networks - Study 206,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2020,71,11.83,synthetic_206,https://synthetic.paper/206,High ROT
+41,Robust Document Representations using Latent Topics and Metadata,"Task specific fine-tuning of a pre-trained neural language model using a
+custom softmax output layer is the de facto approach of late when dealing with
+document classification problems. This technique...",2020,71,11.83,N/A,http://arxiv.org/abs/2010.12681v1,High ROT
+365,Reinforcement Learning for Autonomous Systems - Study 263,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2020,70,11.67,synthetic_263,https://synthetic.paper/263,High ROT
+287,Self-Supervised Learning in Computer Vision - Study 185,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2020,70,11.67,synthetic_185,https://synthetic.paper/185,High ROT
+158,Explainable AI for Trustworthy Machine Learning - Study 56,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2020,68,11.33,synthetic_56,https://synthetic.paper/56,High ROT
+225,Machine Learning Applications in Computer Vision - Study 123,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2020,68,11.33,synthetic_123,https://synthetic.paper/123,High ROT
+388,Generative Adversarial Networks for Image Synthesis - Study 286,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2020,68,11.33,synthetic_286,https://synthetic.paper/286,High ROT
+65,"Adapting BERT for Continual Learning of a Sequence of Aspect Sentiment
+  Classif...","This paper studies continual learning (CL) of a sequence of aspect sentiment
+classification (ASC) tasks. Although some CL techniques have been proposed for
+document sentiment classification, we are no...",2021,56,11.20,N/A,http://arxiv.org/abs/2112.03271v1,High ROT
+211,Explainable AI for Trustworthy Machine Learning - Study 109,This work explores reinforcement learning strategies for developing autonomous systems with improved decision-making capabilities.,2020,66,11.00,synthetic_109,https://synthetic.paper/109,High ROT
+243,Quantum Machine Learning Algorithms - Study 141,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2021,55,11.00,synthetic_141,https://synthetic.paper/141,High ROT
+290,Attention Mechanisms in Neural Networks - Study 188,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2025,109,109.00,synthetic_188,https://synthetic.paper/188,High ROT
+341,Multi-Modal Learning with Neural Networks - Study 239,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2024,217,108.50,synthetic_239,https://synthetic.paper/239,High ROT
+148,Reinforcement Learning for Autonomous Systems - Study 46,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2024,213,106.50,synthetic_46,https://synthetic.paper/46,High ROT
+95,"Benchmarking Randomized Optimization Algorithms on Binary, Permutation,
+  and Co...","In this paper, we evaluate the performance of four randomized optimization
+algorithms: Randomized Hill Climbing (RHC), Simulated Annealing (SA), Genetic
+Algorithms (GA), and MIMIC (Mutual Information ...",2025,102,102.00,N/A,http://arxiv.org/abs/2501.17170v1,High ROT
+78,Template Controllable keywords-to-text Generation,"This paper proposes a novel neural model for the understudied task of
+generating text from keywords. The model takes as input a set of un-ordered
+keywords, and part-of-speech (POS) based template inst...",2020,65,10.83,N/A,http://arxiv.org/abs/2011.03722v1,High ROT
+349,Machine Learning Applications in Computer Vision - Study 247,Our approach utilizes graph neural networks to analyze complex social network structures and relationships.,2020,65,10.83,synthetic_247,https://synthetic.paper/247,High ROT
+187,Quantum Machine Learning Algorithms - Study 85,This research focuses on federated learning techniques that preserve privacy while enabling collaborative AI development.,2021,53,10.60,synthetic_85,https://synthetic.paper/85,High ROT
+231,Natural Language Processing with Transformer Models - Study 129,We present a comprehensive study of attention mechanisms and their impact on neural network performance.,2020,63,10.50,synthetic_129,https://synthetic.paper/129,High ROT
+387,Continual Learning in Neural Networks - Study 285,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2020,63,10.50,synthetic_285,https://synthetic.paper/285,High ROT
+71,"Latent Topology Induction for Understanding Contextualized
+  Representations","In this work, we study the representation space of contextualized embeddings
+and gain insight into the hidden topology of large language models. We show
+there exists a network of latent states that su...",2022,41,10.25,N/A,http://arxiv.org/abs/2206.01512v1,High ROT
+80,"Adaptive Perturbation-Based Gradient Estimation for Discrete Latent
+  Variable M...","The integration of discrete algorithmic components in deep learning
+architectures has numerous applications. Recently, Implicit Maximum Likelihood
+Estimation (IMLE, Niepert, Minervini, and Franceschi ...",2022,41,10.25,N/A,http://arxiv.org/abs/2209.04862v2,High ROT
+223,Self-Supervised Learning in Computer Vision - Study 121,We introduce a new methodology for applying machine learning techniques to complex computer vision tasks.,2020,61,10.17,synthetic_121,https://synthetic.paper/121,High ROT
+306,Advanced Neural Network Architectures for Deep Learning - Study 204,Our research demonstrates the effectiveness of transformer-based models in natural language processing applications.,2021,50,10.00,synthetic_204,https://synthetic.paper/204,High ROT
+363,Knowledge Distillation in Deep Learning - Study 261,This paper presents a novel approach to neural network architecture design that improves performance across multiple domains.,2019,70,10.00,synthetic_261,https://synthetic.paper/261,High ROT
