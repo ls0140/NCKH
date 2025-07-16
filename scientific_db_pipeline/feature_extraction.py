@@ -76,7 +76,7 @@ def extract_and_store_features():
     engine = get_engine()
     Session = sessionmaker(bind=engine)
     session = Session()
-
+    
     try:
         query = """
         SELECT p.paper_id, p.abstract
@@ -145,7 +145,7 @@ def extract_and_store_features():
                     for key, value in combined_features.items():
                         if hasattr(existing_features, key):
                             setattr(existing_features, key, value)
-                    else:
+                else:
                     # Create new record
                     features = PaperFeatures(
                         paper_id=paper.paper_id,
@@ -196,8 +196,12 @@ def extract_and_store_features():
         logging.info("🚀 Successfully saved new feature sets. Stage 2 is complete!")
 =======
         logging.info(f"Feature extraction complete. Processed {processed_count} papers, AI enhanced: {ai_processed_count}, Skipped: {skipped_count}")
+<<<<<<< HEAD
 >>>>>>> 3f86cd5 (Update ALOT of thingS)
 
+=======
+        
+>>>>>>> e83c01a (Revert "Update ALOT of thingS")
     except Exception as e:
         logging.error(f"An error occurred during feature extraction: {e}", exc_info=True)
         session.rollback()
@@ -248,7 +252,7 @@ def analyze_feature_reliability():
             if column != 'paper_id':
                 if df[column].dtype in ['int64', 'float64']:
                     logging.info(f"{column}: mean={df[column].mean():.2f}, std={df[column].std():.2f}, range=[{df[column].min():.2f}, {df[column].max():.2f}]")
-        else:
+                else:
                     logging.info(f"{column}: {df[column].value_counts().to_dict()}")
         
         # Check for missing values
