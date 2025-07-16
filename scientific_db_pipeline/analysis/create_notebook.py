@@ -1,0 +1,82 @@
+import json
+
+# Create a simple notebook structure
+notebook = {
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# Scientific Paper Database - EDA Analysis\n",
+                "\n",
+                "This notebook performs exploratory data analysis on your scientific paper database."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Install packages\n",
+                "!pip install pandas numpy matplotlib seaborn scipy scikit-learn"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Import libraries\n",
+                "import pandas as pd\n",
+                "import numpy as np\n",
+                "import matplotlib.pyplot as plt\n",
+                "import seaborn as sns\n",
+                "print(\"Libraries imported successfully!\")"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": None,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "# Load data\n",
+                "try:\n",
+                "    df = pd.read_csv(\"all_papers_with_rot_groups.csv\")\n",
+                "    print(f\"Data loaded: {df.shape[0]} rows, {df.shape[1]} columns\")\n",
+                "    print(df.head())\n",
+                "except FileNotFoundError:\n",
+                "    print(\"Please upload your CSV file first\")"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 3
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython3",
+            "version": "3.8.5"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 4
+}
+
+# Write the notebook to file
+with open('simple_analysis.ipynb', 'w', encoding='utf-8') as f:
+    json.dump(notebook, f, indent=2, ensure_ascii=False)
+
+print("Notebook created successfully: simple_analysis.ipynb") 
