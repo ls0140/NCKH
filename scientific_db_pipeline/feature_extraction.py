@@ -8,6 +8,7 @@ from sqlalchemy import insert, Column, Integer, String, Boolean, Float, ForeignK
 from sqlalchemy.orm import sessionmaker
 from database.schema import get_engine, Base
 
+<<<<<<< HEAD
 # --- Configuration: Feature Keywords ---
 JARGON_LIST = [
     'neural network', 'deep learning', 'transformer', 'gan', 'convolutional',
@@ -20,6 +21,36 @@ DATASET_KEYWORDS = [
 METRIC_KEYWORDS = [
     'accuracy', 'precision', 'recall', 'f1-score', 'f1 score', 'auc', 'roc', 'mean squared error', 'mse'
 ]
+=======
+# Try to ensure the word list is available
+try:
+    nltk.data.find('corpora/words')
+except LookupError:
+    nltk.download('words')
+
+# Load the set of common English words (lowercase)
+COMMON_WORDS_SET = set(word.lower() for word in nltk_words.words())
+
+# Optionally, add more common words or domain-specific stopwords
+
+
+def calculate_jargon_score(abstract, common_words_set=COMMON_WORDS_SET):
+    """
+    Calculate the proportion of words in the abstract that are NOT in the common English word list.
+    Returns a float between 0 and 1.
+    """
+    if not abstract or len(abstract.strip()) < 10:
+        return 0.0
+    # Tokenize words (simple split, remove punctuation)
+    words = re.findall(r"\b\w+\b", abstract.lower())
+    if not words:
+        return 0.0
+    jargon_words = [w for w in words if w not in common_words_set]
+    return len(jargon_words) / len(words)
+
+# Configure OpenAI
+openai.api_key = "API KEY TOP SECRET"
+>>>>>>> b766010 (Top secret area 51)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
