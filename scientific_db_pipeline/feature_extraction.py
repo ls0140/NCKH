@@ -1,27 +1,21 @@
 # feature_extraction.py
 
-import logging
+import os
 import re
+import logging
 import pandas as pd
-import textstat
-from sqlalchemy import insert, Column, Integer, String, Boolean, Float, ForeignKey
+import numpy as np
 from sqlalchemy.orm import sessionmaker
-from database.schema import get_engine, Base
+from sqlalchemy import text
+from database.schema import get_engine, Paper, PaperFeatures
+import openai
+from textstat import textstat
+import time
+import random
+import json
+import nltk
+from nltk.corpus import words as nltk_words
 
-<<<<<<< HEAD
-# --- Configuration: Feature Keywords ---
-JARGON_LIST = [
-    'neural network', 'deep learning', 'transformer', 'gan', 'convolutional',
-    'algorithm', 'python', 'tensorflow', 'pytorch', 'backpropagation',
-    'gradient descent', 'hyperparameter', 'regularization', 'svm', 'big data'
-]
-DATASET_KEYWORDS = [
-    'dataset', 'corpus', 'benchmark', 'data set', 'training data', 'validation set'
-]
-METRIC_KEYWORDS = [
-    'accuracy', 'precision', 'recall', 'f1-score', 'f1 score', 'auc', 'roc', 'mean squared error', 'mse'
-]
-=======
 # Try to ensure the word list is available
 try:
     nltk.data.find('corpora/words')
@@ -50,66 +44,133 @@ def calculate_jargon_score(abstract, common_words_set=COMMON_WORDS_SET):
 
 # Configure OpenAI
 openai.api_key = "API KEY TOP SECRET"
->>>>>>> b766010 (Top secret area 51)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Define the table schema within the script
-class PaperFeatures(Base):
-    __tablename__ = 'paper_features'
-    paper_id = Column(Integer, ForeignKey('papers.paper_id'), primary_key=True)
-    abstract_word_count = Column(Integer)
-    avg_sentence_length = Column(Float)
-    readability_flesch_score = Column(Float)
-    jargon_score = Column(Float)
-    mentions_dataset = Column(Boolean)
-    mentions_metrics = Column(Boolean)
-    has_github_link = Column(Boolean)
+def analyze_abstract_with_ai(abstract, max_retries=3):
+    """
+    Use OpenAI to analyze abstract and extract features with retry logic
+    """
+    for attempt in range(max_retries):
+        try:
+            prompt = f"""
+            Analyze this scientific paper abstract and provide the following features as JSON:
+            
+            Abstract: {abstract}
+            
+            Please return ONLY a JSON object with these exact keys:
+            {{
+                "jargon_score": <percentage of technical terms, 0-100>,
+                "readability_flesch_score": <Flesch reading ease score, 0-100>,
+                "avg_sentence_length": <average words per sentence>,
+                "abstract_word_count": <total word count>,
+                "mentions_dataset": <true/false if mentions datasets>,
+                "mentions_metrics": <true/false if mentions evaluation metrics>,
+                "has_github_link": <true/false if contains GitHub link>
+            }}
+            
+            Be precise and return only the JSON object.
+            """
+            
+            response = openai.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a scientific text analyzer. Return only JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.1,
+                max_tokens=500
+            )
+            
+            content = response.choices[0].message.content.strip()
+            if content.startswith('```json'):
+                content = content[7:]
+            if content.endswith('```'):
+                content = content[:-3]
+            
+            result = json.loads(content)
+            
+            # Convert boolean strings to actual booleans
+            result['mentions_dataset'] = bool(result['mentions_dataset'])
+            result['mentions_metrics'] = bool(result['mentions_metrics'])
+            result['has_github_link'] = bool(result['has_github_link'])
+            
+            return result
+            
+        except openai.RateLimitError:
+            wait_time = (2 ** attempt) + random.uniform(0, 1)  # Exponential backoff
+            logging.warning(f"Rate limit hit, waiting {wait_time:.1f} seconds (attempt {attempt + 1}/{max_retries})")
+            time.sleep(wait_time)
+            continue
+        except Exception as e:
+            logging.error(f"AI analysis failed (attempt {attempt + 1}/{max_retries}): {e}")
+            if attempt == max_retries - 1:
+                return None
+            time.sleep(1)
+    
+    return None
 
+def extract_basic_features(abstract):
+    """
+    Extract basic features without AI, including real jargon score
+    """
+    if not abstract or len(abstract.strip()) < 10:
+        return None
+    
+    # Basic text statistics
+    abstract_word_count = len(abstract.split())
+    sentences = re.split(r'[.!?]+', abstract)
+    sentences = [s.strip() for s in sentences if s.strip()]
+    avg_sentence_length = abstract_word_count / len(sentences) if sentences else 0
+    
+    # Readability score
+    try:
+        readability_flesch_score = textstat.flesch_reading_ease(abstract)
+    except:
+        readability_flesch_score = 0
+    
+    # Check for GitHub links
+    has_github_link = 'github.com' in abstract.lower() or 'github.io' in abstract.lower()
+    
+    # Check for dataset mentions
+    dataset_keywords = ['dataset', 'data set', 'corpus', 'benchmark', 'evaluation set']
+    mentions_dataset = any(keyword in abstract.lower() for keyword in dataset_keywords)
+    
+    # Check for evaluation metrics
+    eval_keywords = ['accuracy', 'precision', 'recall', 'f1', 'f1-score', 'auc', 'roc', 'bleu', 'rouge', 'perplexity']
+    mentions_metrics = any(keyword in abstract.lower() for keyword in eval_keywords)
+    
+    # Calculate jargon score
+    jargon_score = calculate_jargon_score(abstract)
+    
+    return {
+        'abstract_word_count': abstract_word_count,
+        'avg_sentence_length': avg_sentence_length,
+        'readability_flesch_score': readability_flesch_score,
+        'has_github_link': has_github_link,
+        'mentions_dataset': mentions_dataset,
+        'mentions_metrics': mentions_metrics,
+        'jargon_score': jargon_score
+    }
 
 def extract_and_store_features():
     """
-    Connects to the DB, extracts features from paper abstracts,
-    and stores them in the `paper_features` table.
+    Extract features from paper abstracts and store in database with better rate limiting
     """
     engine = get_engine()
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     try:
-        query = """
-        SELECT p.paper_id, p.abstract
-        FROM papers p
-        LEFT JOIN paper_features f ON p.paper_id = f.paper_id
-        WHERE f.paper_id IS NULL;
-        """
+        # Get all papers with abstracts
+        papers = session.query(Paper).filter(Paper.abstract.isnot(None)).all()
+        logging.info(f"Found {len(papers)} papers with abstracts")
         
-        logging.info("Reading papers without features from the database...")
-        df_papers = pd.read_sql(query, engine)
-
-        # Add these three lines for debugging
-        print("--- DEBUG: SQL QUERY BEING EXECUTED ---")
-        print(query)
-        print("---------------------------------------")
+        processed_count = 0
+        ai_processed_count = 0
+        skipped_count = 0
         
-<<<<<<< HEAD
-        # This line should already be in your code
-        df_papers = pd.read_sql(query, engine)
-
-        if df_papers.empty:
-            logging.info("✅ All papers already have features.")
-            return
-
-        logging.info(f"Found {len(df_papers)} new papers. Starting feature extraction... ⚙️")
-        
-        new_features = []
-        for _, row in df_papers.iterrows():
-            paper_id = int(row['paper_id'])
-            abstract = str(row['abstract'])
-
-            if not abstract or pd.isna(abstract) or len(abstract.split()) < 20:
-=======
         for i, paper in enumerate(papers):
             try:
                 # Always process and overwrite features
@@ -145,7 +206,7 @@ def extract_and_store_features():
                     for key, value in combined_features.items():
                         if hasattr(existing_features, key):
                             setattr(existing_features, key, value)
-                else:
+                        else:
                     # Create new record
                     features = PaperFeatures(
                         paper_id=paper.paper_id,
@@ -165,53 +226,17 @@ def extract_and_store_features():
             except Exception as e:
                 logging.error(f"Error processing paper {paper.paper_id}: {e}")
                 skipped_count += 1
->>>>>>> 3f86cd5 (Update ALOT of thingS)
                 continue
-
-            word_count = len(abstract.split())
-            abstract_lower = abstract.lower()
-
-            # --- Feature Calculation ---
-            feature_obj = {
-                'paper_id': paper_id,
-                'abstract_word_count': word_count,
-                'avg_sentence_length': textstat.avg_sentence_length(abstract),  # type: ignore
-                'readability_flesch_score': textstat.flesch_reading_ease(abstract),  # type: ignore
-                'jargon_score': (sum(1 for term in JARGON_LIST if term in abstract_lower) / word_count) * 100,
-                'mentions_dataset': any(keyword in abstract_lower for keyword in DATASET_KEYWORDS),
-                'mentions_metrics': any(keyword in abstract_lower for keyword in METRIC_KEYWORDS),
-                'has_github_link': bool(re.search(r'github\.com', abstract_lower))
-            }
-            new_features.append(feature_obj)
-
-        if not new_features:
-            logging.warning("No valid features were generated.")
-            return
-
-        logging.info(f"Saving {len(new_features)} new feature sets...")
-        session.execute(insert(PaperFeatures), new_features)
+        
         session.commit()
-<<<<<<< HEAD
-        
-        logging.info("🚀 Successfully saved new feature sets. Stage 2 is complete!")
-=======
         logging.info(f"Feature extraction complete. Processed {processed_count} papers, AI enhanced: {ai_processed_count}, Skipped: {skipped_count}")
-<<<<<<< HEAD
->>>>>>> 3f86cd5 (Update ALOT of thingS)
 
-=======
-        
->>>>>>> e83c01a (Revert "Update ALOT of thingS")
     except Exception as e:
-        logging.error(f"An error occurred during feature extraction: {e}", exc_info=True)
+        logging.error(f"Error in feature extraction: {e}")
         session.rollback()
     finally:
         session.close()
 
-<<<<<<< HEAD
-if __name__ == '__main__':
-    extract_and_store_features()
-=======
 def analyze_feature_reliability():
     """
     Analyze the reliability of extracted features
@@ -252,7 +277,7 @@ def analyze_feature_reliability():
             if column != 'paper_id':
                 if df[column].dtype in ['int64', 'float64']:
                     logging.info(f"{column}: mean={df[column].mean():.2f}, std={df[column].std():.2f}, range=[{df[column].min():.2f}, {df[column].max():.2f}]")
-                else:
+        else:
                     logging.info(f"{column}: {df[column].value_counts().to_dict()}")
         
         # Check for missing values
@@ -271,4 +296,3 @@ if __name__ == "__main__":
         analyze_feature_reliability()
     else:
         extract_and_store_features()
->>>>>>> 3f86cd5 (Update ALOT of thingS)
