@@ -13,7 +13,8 @@ from sqlalchemy import (
     TIMESTAMP,
     Date,
     UniqueConstraint,
-    Column
+    Column,
+    Boolean
 )
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 
@@ -45,12 +46,31 @@ class Paper(Base):
     citation_count = Column(Integer)
     last_updated = Column(TIMESTAMP)
     rot_score = Column(Float, index=True)
+    final_verdict = Column(String(50), index=True)
 
     # Relationship to the PaperAuthors association table
     author_associations = relationship("PaperAuthors", back_populates="paper")
     
     def __repr__(self):
         return f"<Paper(title='{self.title[:30]}...', doi='{self.doi}')>"
+
+class PaperFeatures(Base):
+    """
+    This table stores extracted features from paper abstracts for analysis.
+    """
+    __tablename__ = 'paper_features'
+    
+    paper_id = Column(ForeignKey('papers.paper_id'), primary_key=True)
+    abstract_word_count = Column(Integer)
+    avg_sentence_length = Column(Float)
+    readability_flesch_score = Column(Float)
+    jargon_score = Column(Float)
+    mentions_dataset = Column(Boolean)
+    mentions_metrics = Column(Boolean)
+    has_github_link = Column(Boolean)
+    
+    def __repr__(self):
+        return f"<PaperFeatures(paper_id={self.paper_id})>"
 
 class Author(Base):
     __tablename__ = 'authors'

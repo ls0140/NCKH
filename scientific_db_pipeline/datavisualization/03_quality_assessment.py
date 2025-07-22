@@ -1,5 +1,5 @@
 # ============================================================================
-# QUALITY ASSESSMENT OF FEATURES
+# QUALITY ASSESSMENT OF FEATURES WITH 5-CATEGORY ROT SYSTEM
 # ============================================================================
 # File: datavisualization/03_quality_assessment.py
 # Purpose: Comprehensive quality assessment of all features
@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-from scipy.stats import ttest_ind, chi2_contingency
+from scipy.stats import f_oneway, chi2_contingency
 import warnings
 import io
 from google.colab import files
@@ -32,6 +32,14 @@ def load_data():
     print(f"✅ Data loaded successfully!")
     print(f"📊 Dataset shape: {df.shape}")
     print(f"📋 Columns: {list(df.columns)}")
+    
+    # Check for final_verdict column
+    if 'final_verdict' not in df.columns:
+        print("❌ Error: 'final_verdict' column not found!")
+        print("Please upload a file with the 5-category final_verdict column")
+        return None
+    
+    print(f"🎯 Found 5-category system: {df['final_verdict'].unique()}")
     
     return df
 
@@ -73,40 +81,48 @@ def assess_numeric_features(df):
     print("\nNUMERIC FEATURES ASSESSMENT:")
     print("="*50)
     
+    categories = ['Very Low ROT', 'Low ROT', 'Medium ROT', 'High ROT', 'Very High ROT']
+    df_filtered = df[df['final_verdict'].isin(categories)]
+    
     numeric_features = ['rot_score', 'publication_year', 'citation_count']
     results = []
     
     for feature in numeric_features:
         if feature in df.columns:
-            # Split data by ROT group
-            high_rot = df[df['rot_group'] == 'High ROT'][feature].dropna()
-            low_rot = df[df['rot_group'] == 'Low ROT'][feature].dropna()
+            # Split data by categories
+            groups = [df_filtered[df_filtered['final_verdict'] == cat][feature].dropna() 
+                     for cat in categories]
             
-            # T-test
-            t_stat, p_value = ttest_ind(high_rot, low_rot)
+            # ANOVA test
+            f_stat, p_value = f_oneway(*groups)
             
-            # Calculate effect size (Cohen's d)
-            pooled_std = np.sqrt(((len(high_rot) - 1) * high_rot.var() + (len(low_rot) - 1) * low_rot.var()) / 
-                               (len(high_rot) + len(low_rot) - 2))
-            cohens_d = (high_rot.mean() - low_rot.mean()) / pooled_std if pooled_std != 0 else 0
+            # Calculate effect size (Eta-squared)
+            ss_between = 0
+            ss_total = 0
+            grand_mean = df_filtered[feature].mean()
+            
+            for group in groups:
+                if len(group) > 0:
+                    group_mean = group.mean()
+                    ss_between += len(group) * (group_mean - grand_mean) ** 2
+                    ss_total += sum((group - grand_mean) ** 2)
+            
+            eta_squared = ss_between / ss_total if ss_total != 0 else 0
             
             # Determine effect size category
-            if abs(cohens_d) > 0.8:
+            if eta_squared > 0.14:
                 effect_size = 'Large'
-            elif abs(cohens_d) > 0.5:
+            elif eta_squared > 0.06:
                 effect_size = 'Medium'
             else:
                 effect_size = 'Small'
             
             results.append({
                 'Feature': feature,
-                'High_ROT_Mean': round(high_rot.mean(), 3),
-                'Low_ROT_Mean': round(low_rot.mean(), 3),
-                'Mean_Difference': round(high_rot.mean() - low_rot.mean(), 3),
-                'T_Statistic': round(t_stat, 4),
-                'P_Value': round(p_value, 4),
-                'Cohens_D': round(cohens_d, 3),
-                'Effect_Size': effect_size,
+                'F_statistic': f_stat,
+                'P_value': p_value,
+                'Eta_squared': eta_squared,
+                'Effect_size': effect_size,
                 'Significant': p_value < 0.05
             })
     
@@ -117,18 +133,21 @@ def assess_categorical_features(df):
     print("\nCATEGORICAL FEATURES ASSESSMENT:")
     print("="*50)
     
+    categories = ['Very Low ROT', 'Low ROT', 'Medium ROT', 'High ROT', 'Very High ROT']
+    df_filtered = df[df['final_verdict'].isin(categories)]
+    
     categorical_features = ['mentions_dataset', 'mentions_metrics', 'has_github_link']
     results = []
     
     for feature in categorical_features:
         if feature in df.columns:
             # Chi-square test
-            observed = pd.crosstab(df[feature], df['rot_group'])
-            chi2, p_value, dof, expected = chi2_contingency(observed)
+            contingency_matrix = pd.crosstab(df_filtered[feature], df_filtered['final_verdict'])
+            chi2, p_value, dof, expected = chi2_contingency(contingency_matrix)
             
             # Calculate Cramer's V
-            n = len(df)
-            min_dim = min(observed.shape) - 1
+            n = len(df_filtered)
+            min_dim = min(contingency_matrix.shape) - 1
             cramer_v = np.sqrt(chi2 / (n * min_dim)) if min_dim > 0 else 0
             
             # Determine effect size
@@ -141,10 +160,10 @@ def assess_categorical_features(df):
             
             results.append({
                 'Feature': feature,
-                'Chi2_Statistic': round(chi2, 4),
-                'P_Value': round(p_value, 4),
-                'Cramer_V': round(cramer_v, 4),
-                'Effect_Size': effect_size,
+                'Chi2': chi2,
+                'P_value': p_value,
+                'Cramer_V': cramer_v,
+                'Effect_size': effect_size,
                 'Significant': p_value < 0.05
             })
     
@@ -152,151 +171,126 @@ def assess_categorical_features(df):
 
 def create_quality_summary(numeric_results, categorical_results):
     """Create comprehensive quality summary"""
-    print("\n" + "="*80)
-    print("COMPREHENSIVE QUALITY ASSESSMENT")
-    print("="*80)
-    
-    # Dataset overview
-    print(f"\n📊 DATASET OVERVIEW:")
-    print(f"   • Total papers: {len(df)}")
-    print(f"   • ROT Groups: {dict(df['rot_group'].value_counts())}")
-    
-    # Numeric features summary
-    if numeric_results:
-        print(f"\n🔢 NUMERIC FEATURES ANALYSIS:")
-        print(f"   • Features analyzed: {len(numeric_results)}")
-        significant_num = [r for r in numeric_results if r['Significant']]
-        print(f"   • Significant features: {len(significant_num)}")
-        
-        for result in numeric_results:
-            status = "✅ GOOD" if result['Significant'] else "❌ POOR"
-            print(f"   • {result['Feature']}: {status}")
-            print(f"     - P-value: {result['P_Value']} {'(p < 0.05)' if result['Significant'] else '(p >= 0.05)'}")
-            print(f"     - Cohen's d: {result['Cohens_D']} ({result['Effect_Size']} effect)")
-    
-    # Categorical features summary
-    if categorical_results:
-        print(f"\n🔍 CATEGORICAL FEATURES ANALYSIS:")
-        print(f"   • Features analyzed: {len(categorical_results)}")
-        significant_cat = [r for r in categorical_results if r['Significant']]
-        print(f"   • Significant features: {len(significant_cat)}")
-        
-        for result in categorical_results:
-            status = "✅ GOOD" if result['Significant'] else "❌ POOR"
-            print(f"   • {result['Feature']}: {status}")
-            print(f"     - P-value: {result['P_Value']} {'(p < 0.05)' if result['Significant'] else '(p >= 0.05)'}")
-            print(f"     - Cramer's V: {result['Cramer_V']} ({result['Effect_Size']} effect)")
-    
-    # Overall assessment
-    total_features = len(numeric_results) + len(categorical_results)
-    total_significant = len([r for r in numeric_results if r['Significant']]) + len([r for r in categorical_results if r['Significant']])
-    
-    print(f"\n💡 OVERALL ASSESSMENT:")
-    print(f"   • Total features: {total_features}")
-    print(f"   • Significant features: {total_significant}")
-    print(f"   • Success rate: {total_significant/total_features*100:.1f}%")
-    
-    if total_significant >= total_features * 0.6:
-        print(f"   • 🎉 EXCELLENT: Features have GOOD quality for verdict prediction!")
-    elif total_significant >= total_features * 0.4:
-        print(f"   • ⚠️ MODERATE: Features have MODERATE quality for verdict prediction!")
-    else:
-        print(f"   • ❌ POOR: Features need SIGNIFICANT improvement for verdict prediction!")
-    
-    # Recommendations
-    print(f"\n💡 RECOMMENDATIONS:")
-    if total_significant < total_features * 0.6:
-        print(f"   • Improve feature extraction methods")
-        print(f"   • Add more sophisticated features")
-        print(f"   • Consider feature engineering")
-        print(f"   • Investigate ROT score calculation")
-    else:
-        print(f"   • Features are ready for model training")
-        print(f"   • Consider ensemble methods")
-        print(f"   • Monitor model performance")
-
-def create_quality_visualization(numeric_results, categorical_results):
-    """Create visualization of quality assessment"""
-    print("\n📈 CREATING QUALITY VISUALIZATION:")
+    print("\nQUALITY ASSESSMENT SUMMARY:")
     print("="*50)
     
-    # Prepare data for visualization
-    all_results = []
+    all_results = numeric_results + categorical_results
     
-    for result in numeric_results:
-        all_results.append({
-            'Feature': result['Feature'],
-            'Type': 'Numeric',
-            'P_Value': result['P_Value'],
-            'Effect_Size': result['Effect_Size'],
-            'Significant': result['Significant']
-        })
+    # Print results table
+    print(f"{'Feature':<20} {'Test':<8} {'Statistic':<10} {'P-value':<10} {'Effect Size':<12} {'Significant':<10}")
+    print("-" * 70)
     
-    for result in categorical_results:
-        all_results.append({
-            'Feature': result['Feature'],
-            'Type': 'Categorical',
-            'P_Value': result['P_Value'],
-            'Effect_Size': result['Effect_Size'],
-            'Significant': result['Significant']
-        })
+    for result in all_results:
+        if 'F_statistic' in result:
+            test_type = 'ANOVA'
+            statistic = result['F_statistic']
+            effect_size = result['Eta_squared']
+        else:
+            test_type = 'Chi2'
+            statistic = result['Chi2']
+            effect_size = result['Cramer_V']
+        
+        significance = "✅ YES" if result['Significant'] else "❌ NO"
+        print(f"{result['Feature']:<20} {test_type:<8} {statistic:<10.2f} {result['P_value']:<10.4f} "
+              f"{effect_size:<12.3f} {significance:<10}")
     
-    results_df = pd.DataFrame(all_results)
+    # Calculate success rates
+    significant_numeric = sum(1 for r in numeric_results if r['Significant'])
+    significant_categorical = sum(1 for r in categorical_results if r['Significant'])
+    total_significant = significant_numeric + significant_categorical
     
-    # Create quality assessment plot
+    print(f"\n📊 SUCCESS RATES:")
+    print(f"   • Numeric features: {significant_numeric}/{len(numeric_results)} ({significant_numeric/len(numeric_results)*100:.1f}%)")
+    print(f"   • Categorical features: {significant_categorical}/{len(categorical_results)} ({significant_categorical/len(categorical_results)*100:.1f}%)")
+    print(f"   • Overall: {total_significant}/{len(all_results)} ({total_significant/len(all_results)*100:.1f}%)")
+    
+    # Quality assessment
+    overall_rate = total_significant / len(all_results)
+    if overall_rate >= 0.6:
+        quality = "EXCELLENT"
+        recommendation = "Features are highly suitable for AI classification!"
+    elif overall_rate >= 0.4:
+        quality = "GOOD"
+        recommendation = "Features are suitable for AI classification with some improvements."
+    else:
+        quality = "POOR"
+        recommendation = "Features need significant improvement for AI classification."
+    
+    print(f"\n🎯 QUALITY ASSESSMENT:")
+    print(f"   • Overall Quality: {quality}")
+    print(f"   • Recommendation: {recommendation}")
+    
+    return all_results
+
+def create_quality_visualization(numeric_results, categorical_results):
+    """Create quality visualization"""
+    print("\nQUALITY VISUALIZATION:")
+    print("="*50)
+    
+    all_results = numeric_results + categorical_results
+    
+    # Create quality score plot
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
     
-    # Plot 1: P-values
-    colors = ['red' if not sig else 'green' for sig in results_df['Significant']]
-    ax1.bar(range(len(results_df)), results_df['P_Value'], color=colors, alpha=0.7)
-    ax1.axhline(y=0.05, color='red', linestyle='--', label='Significance threshold (0.05)')
-    ax1.set_title('P-values by Feature', fontweight='bold')
-    ax1.set_xlabel('Features')
-    ax1.set_ylabel('P-value')
-    ax1.set_xticks(range(len(results_df)))
-    ax1.set_xticklabels(results_df['Feature'], rotation=45)
-    ax1.legend()
+    # Plot 1: Success rate by feature type
+    feature_types = ['Numeric', 'Categorical']
+    numeric_success = sum(1 for r in numeric_results if r['Significant']) / len(numeric_results) * 100
+    categorical_success = sum(1 for r in categorical_results if r['Significant']) / len(categorical_results) * 100
+    
+    bars1 = ax1.bar(feature_types, [numeric_success, categorical_success], 
+                    color=['#ff7f0e', '#1f77b4'], alpha=0.8)
+    ax1.set_title('Success Rate by Feature Type', fontweight='bold')
+    ax1.set_ylabel('Success Rate (%)')
+    ax1.set_ylim(0, 100)
     ax1.grid(True, alpha=0.3)
     
-    # Plot 2: Feature types and significance
-    significant_counts = results_df.groupby(['Type', 'Significant']).size().unstack(fill_value=0)
-    significant_counts.plot(kind='bar', ax=ax2, color=['red', 'green'], alpha=0.7)
-    ax2.set_title('Feature Quality by Type', fontweight='bold')
-    ax2.set_xlabel('Feature Type')
-    ax2.set_ylabel('Count')
-    ax2.legend(['Not Significant', 'Significant'])
+    # Add value labels
+    for bar, value in zip(bars1, [numeric_success, categorical_success]):
+        ax1.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1, 
+                f'{value:.1f}%', ha='center', va='bottom', fontweight='bold')
+    
+    # Plot 2: Individual feature quality
+    features = [r['Feature'] for r in all_results]
+    p_values = [r['P_value'] for r in all_results]
+    significant = [r['Significant'] for r in all_results]
+    
+    colors = ['green' if sig else 'red' for sig in significant]
+    bars2 = ax2.bar(range(len(features)), [-np.log10(p) if p > 0 else 10 for p in p_values], 
+                    color=colors, alpha=0.8)
+    ax2.set_title('Feature Quality (-log10 P-value)', fontweight='bold')
+    ax2.set_xlabel('Features')
+    ax2.set_ylabel('-log10(P-value)')
+    ax2.set_xticks(range(len(features)))
+    ax2.set_xticklabels(features, rotation=45, ha='right')
+    ax2.axhline(y=-np.log10(0.05), color='red', linestyle='--', alpha=0.7, label='p=0.05 threshold')
+    ax2.legend()
     ax2.grid(True, alpha=0.3)
     
     plt.tight_layout()
     plt.show()
 
 def main():
-    """Main function to run quality assessment"""
-    print("QUALITY ASSESSMENT OF FEATURES")
+    """Main quality assessment function"""
+    print("🔬 QUALITY ASSESSMENT WITH 5-CATEGORY ROT SYSTEM")
     print("="*60)
     
     # Load data
     df = load_data()
-    
-    # Check if rot_group exists
-    if 'rot_group' not in df.columns:
-        print("❌ Error: 'rot_group' column not found!")
+    if df is None:
         return
     
-    # Extract categorical features if needed
+    # Extract categorical features
     df = extract_categorical_features(df)
     
     # Assess features
     numeric_results = assess_numeric_features(df)
     categorical_results = assess_categorical_features(df)
     
-    # Create quality summary
-    create_quality_summary(numeric_results, categorical_results)
-    
-    # Create quality visualization
+    # Create summary and visualization
+    all_results = create_quality_summary(numeric_results, categorical_results)
     create_quality_visualization(numeric_results, categorical_results)
     
-    print("\n✅ Quality assessment completed!")
+    print("\n✅ Quality assessment complete!")
 
 if __name__ == "__main__":
     main() 

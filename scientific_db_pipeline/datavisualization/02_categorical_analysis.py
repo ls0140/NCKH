@@ -1,5 +1,5 @@
 # ============================================================================
-# CATEGORICAL FEATURES ANALYSIS
+# CATEGORICAL FEATURES ANALYSIS WITH 5-CATEGORY ROT SYSTEM
 # ============================================================================
 # File: datavisualization/02_categorical_analysis.py
 # Purpose: Extract and analyze categorical features from abstracts
@@ -32,6 +32,14 @@ def load_data():
     print(f"✅ Data loaded successfully!")
     print(f"📊 Dataset shape: {df.shape}")
     print(f"📋 Columns: {list(df.columns)}")
+    
+    # Check for final_verdict column
+    if 'final_verdict' not in df.columns:
+        print("❌ Error: 'final_verdict' column not found!")
+        print("Please upload a file with the 5-category final_verdict column")
+        return None
+    
+    print(f"🎯 Found 5-category system: {df['final_verdict'].unique()}")
     
     return df
 
@@ -78,14 +86,17 @@ def create_categorical_features(df):
     return df
 
 def analyze_categorical_features(df):
-    """Analyze categorical features vs ROT group"""
+    """Analyze categorical features vs final_verdict"""
     print("\nCATEGORICAL FEATURES ANALYSIS:")
     print("="*50)
+    
+    categories = ['Very Low ROT', 'Low ROT', 'Medium ROT', 'High ROT', 'Very High ROT']
+    df_filtered = df[df['final_verdict'].isin(categories)]
     
     categorical_features = ['mentions_dataset', 'mentions_metrics', 'has_github_link']
     
     # Create stacked bar charts
-    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+    fig, axes = plt.subplots(1, 3, figsize=(20, 6))
     
     results = []
     
@@ -93,45 +104,30 @@ def analyze_categorical_features(df):
         ax = axes[idx]
         
         # Create stacked bar chart
-        contingency_table = pd.crosstab(df[feature], df['rot_group'], normalize='index') * 100
-        contingency_table.plot(kind='bar', stacked=True, ax=ax, 
-                              color=['#ff7f0e', '#1f77b4'], alpha=0.8)
+        contingency_table = pd.crosstab(df_filtered[feature], df_filtered['final_verdict'], normalize='index') * 100
+        contingency_table.plot(kind='bar', stacked=True, ax=ax, alpha=0.8)
         
         # Customize plot
-        ax.set_title(f'{feature}\n(Stacked Bar Chart)', fontweight='bold')
-        ax.set_xlabel(feature)
+        ax.set_title(f'{feature.replace("_", " ").title()} vs Final Verdict', fontweight='bold')
+        ax.set_xlabel(feature.replace("_", " ").title())
         ax.set_ylabel('Percentage (%)')
-        ax.legend(title='ROT Group')
-        ax.tick_params(axis='x', rotation=0)
+        ax.legend(title='Final Verdict', bbox_to_anchor=(1.05, 1), loc='upper left')
         ax.grid(True, alpha=0.3)
         
-        # Add value labels
-        for container in ax.containers:
-            ax.bar_label(container, fmt='%.1f%%', fontsize=8)
-        
-        # Perform Chi-square test
-        observed = pd.crosstab(df[feature], df['rot_group'])
-        chi2, p_value, dof, expected = chi2_contingency(observed)
+        # Calculate chi-square test
+        contingency_matrix = pd.crosstab(df_filtered[feature], df_filtered['final_verdict'])
+        chi2, p_value, dof, expected = chi2_contingency(contingency_matrix)
         
         # Calculate Cramer's V
-        n = len(df)
-        min_dim = min(observed.shape) - 1
+        n = len(df_filtered)
+        min_dim = min(contingency_matrix.shape) - 1
         cramer_v = np.sqrt(chi2 / (n * min_dim)) if min_dim > 0 else 0
-        
-        # Determine effect size
-        if cramer_v > 0.5:
-            effect_size = 'Large'
-        elif cramer_v > 0.3:
-            effect_size = 'Medium'
-        else:
-            effect_size = 'Small'
         
         results.append({
             'Feature': feature,
-            'Chi2_Statistic': round(chi2, 4),
-            'P_Value': round(p_value, 4),
-            'Cramer_V': round(cramer_v, 4),
-            'Effect_Size': effect_size,
+            'Chi2': chi2,
+            'P_value': p_value,
+            'Cramer_V': cramer_v,
             'Significant': p_value < 0.05
         })
     
@@ -142,105 +138,90 @@ def analyze_categorical_features(df):
 
 def create_grouped_bar_charts(df):
     """Create grouped bar charts for categorical features"""
-    print("\nCREATING GROUPED BAR CHARTS:")
+    print("\nGROUPED BAR CHARTS:")
     print("="*50)
+    
+    categories = ['Very Low ROT', 'Low ROT', 'Medium ROT', 'High ROT', 'Very High ROT']
+    df_filtered = df[df['final_verdict'].isin(categories)]
     
     categorical_features = ['mentions_dataset', 'mentions_metrics', 'has_github_link']
     
-    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+    fig, axes = plt.subplots(1, 3, figsize=(20, 6))
     
     for idx, feature in enumerate(categorical_features):
         ax = axes[idx]
         
+        # Calculate percentages for each category
+        feature_stats = df_filtered.groupby('final_verdict')[feature].agg(['sum', 'count'])
+        feature_stats['percentage'] = (feature_stats['sum'] / feature_stats['count']) * 100
+        
         # Create grouped bar chart
-        contingency_table = pd.crosstab(df[feature], df['rot_group'])
-        contingency_table.plot(kind='bar', ax=ax, 
-                              color=['#ff7f0e', '#1f77b4'], alpha=0.8)
+        bars = ax.bar(range(len(categories)), feature_stats['percentage'], 
+                     color=['#ff7f0e', '#1f77b4', '#2ca02c', '#d62728', '#9467bd'], alpha=0.8)
         
         # Customize plot
-        ax.set_title(f'{feature}\n(Grouped Bar Chart)', fontweight='bold')
-        ax.set_xlabel(feature)
-        ax.set_ylabel('Count')
-        ax.legend(title='ROT Group')
-        ax.tick_params(axis='x', rotation=0)
+        ax.set_title(f'{feature.replace("_", " ").title()} by Category', fontweight='bold')
+        ax.set_xlabel('Final Verdict')
+        ax.set_ylabel('Percentage (%)')
+        ax.set_xticks(range(len(categories)))
+        ax.set_xticklabels(categories, rotation=45)
         ax.grid(True, alpha=0.3)
         
-        # Add value labels
-        for container in ax.containers:
-            ax.bar_label(container, fontsize=8)
+        # Add value labels on bars with smart positioning
+        for bar, percentage in zip(bars, feature_stats['percentage']):
+            # Smart positioning: put label inside bar if percentage is small, outside if large
+            if percentage < 5:  # Small percentages
+                ax.text(bar.get_x() + bar.get_width()/2, bar.get_height()/2, 
+                       f'{percentage:.1f}%', ha='center', va='center', fontweight='bold', 
+                       color='white', fontsize=10)
+            else:  # Larger percentages
+                ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5, 
+                       f'{percentage:.1f}%', ha='center', va='bottom', fontweight='bold')
     
     plt.tight_layout()
     plt.show()
 
 def print_statistical_results(results):
-    """Print statistical analysis results"""
-    print("\n📊 STATISTICAL ANALYSIS RESULTS:")
+    """Print statistical test results"""
+    print("\nSTATISTICAL TEST RESULTS:")
     print("="*50)
+    
+    print(f"{'Feature':<20} {'Chi2':<10} {'P-value':<10} {'Cramer V':<10} {'Significant':<10}")
+    print("-" * 60)
     
     for result in results:
-        status = "✅ SIGNIFICANT" if result['Significant'] else "❌ NOT SIGNIFICANT"
-        print(f"\n{result['Feature']}: {status}")
-        print(f"   • Chi-square: {result['Chi2_Statistic']}")
-        print(f"   • P-value: {result['P_Value']} {'(p < 0.05)' if result['Significant'] else '(p >= 0.05)'}")
-        print(f"   • Cramer's V: {result['Cramer_V']} ({result['Effect_Size']} effect)")
+        significance = "✅ YES" if result['Significant'] else "❌ NO"
+        print(f"{result['Feature']:<20} {result['Chi2']:<10.2f} {result['P_value']:<10.4f} "
+              f"{result['Cramer_V']:<10.3f} {significance:<10}")
     
     # Summary
-    significant_count = sum(1 for r in results if r['Significant'])
-    print(f"\n📋 SUMMARY:")
-    print(f"   • Total features analyzed: {len(results)}")
-    print(f"   • Significant features: {significant_count}")
-    print(f"   • Success rate: {significant_count/len(results)*100:.1f}%")
-    
-    if significant_count >= len(results) * 0.6:
-        print(f"   • 🎉 CONCLUSION: Categories have GOOD quality for verdict prediction!")
-    else:
-        print(f"   • ⚠️ CONCLUSION: Categories need improvement for verdict prediction!")
+    significant_features = sum(1 for r in results if r['Significant'])
+    print(f"\n📊 Summary:")
+    print(f"   • Total features tested: {len(results)}")
+    print(f"   • Significant features: {significant_features}")
+    print(f"   • Success rate: {significant_features/len(results)*100:.1f}%")
 
-def detailed_feature_distribution(df):
-    """Show detailed distribution of features"""
-    print("\nDETAILED FEATURE DISTRIBUTION:")
-    print("="*50)
-    
-    for feature in ['mentions_dataset', 'mentions_metrics', 'has_github_link']:
-        print(f"\n{feature}:")
-        print(df.groupby(['rot_group', feature]).size().unstack(fill_value=0))
-        print(f"Overall: {df[feature].sum()}/{len(df)} ({df[feature].mean()*100:.1f}%)")
+
 
 def main():
-    """Main function to run categorical analysis"""
-    print("CATEGORICAL FEATURES ANALYSIS")
-    print("="*60)
+    """Main analysis function"""
+    print("🔬 CATEGORICAL FEATURES ANALYSIS WITH 5-CATEGORY ROT SYSTEM")
+    print("="*70)
     
     # Load data
     df = load_data()
-    
-    # Check if required columns exist
-    if 'abstract' not in df.columns:
-        print("❌ Error: 'abstract' column not found!")
-        print("Available columns:", list(df.columns))
-        return
-    
-    if 'rot_group' not in df.columns:
-        print("❌ Error: 'rot_group' column not found!")
-        print("Available columns:", list(df.columns))
+    if df is None:
         return
     
     # Create categorical features
     df = create_categorical_features(df)
     
-    # Analyze categorical features
+    # Run analyses
     results = analyze_categorical_features(df)
-    
-    # Create grouped bar charts
     create_grouped_bar_charts(df)
-    
-    # Print statistical results
     print_statistical_results(results)
     
-    # Show detailed distribution
-    detailed_feature_distribution(df)
-    
-    print("\n✅ Categorical analysis completed!")
+    print("\n✅ Categorical analysis complete!")
 
 if __name__ == "__main__":
     main() 
